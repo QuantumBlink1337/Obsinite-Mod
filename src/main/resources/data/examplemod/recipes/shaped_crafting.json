@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xy",
+    "yx"
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:stone"
+    },
+    "y": {
+      "item": "minecraft:gravel"
+    }
+  }
+}
+
+
