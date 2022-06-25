@@ -18,12 +18,13 @@ public class PossessedEntity extends Zombie {
     public PossessedEntity(EntityType<? extends Zombie> p_34271_, Level p_34272_) {
         super(p_34271_, p_34272_);
     }
-    public static AttributeSupplier.@NotNull Builder prepareAttributes() {
+    public static AttributeSupplier.@NotNull Builder createMonsterAttributes() {
         return Monster.createLivingAttributes()
                 .add(Attributes.ATTACK_DAMAGE, 3.0)
                 .add(Attributes.MAX_HEALTH, 1)
                 .add(Attributes.FOLLOW_RANGE, 40.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.3)
+                .add(Attributes.ATTACK_KNOCKBACK, 4)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 20f);
     }
 }

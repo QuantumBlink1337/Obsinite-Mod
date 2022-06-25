@@ -70,7 +70,6 @@ public class BaseMod {
         MinecraftForge.EVENT_BUS.register(this);
 
 
-
     }
 
     /**
@@ -83,7 +82,7 @@ public class BaseMod {
         // Put biome manager registry stuff here.
         BaseMod.LOGGER.info("Mod Setup Step");
 //        WorldMod.setupBiomes();
-       // TierSortingRegistry.registerTier(ItemMod.GEL_TIER, new ResourceLocation(MODID, "gelore"), List.of(Tiers.NETHERITE), List.of());
+        // TierSortingRegistry.registerTier(ItemMod.GEL_TIER, new ResourceLocation(MODID, "gelore"), List.of(Tiers.NETHERITE), List.of());
 
         BaseMod.LOGGER.info("Command registration here hopefully.");
 //        MinecraftForge.EVENT_BUS.register(CustomEvent.class);
@@ -106,7 +105,7 @@ public class BaseMod {
                 collect(Collectors.toList()));
     }
 
-        // You can use SubscribeEvent and let the Event Bus discover methods to call
+    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // do something when the server starts
@@ -115,11 +114,8 @@ public class BaseMod {
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
 
-    @SubscribeEvent
-    public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(EntityMod.POSSESSED_ENTITY.get(), PossessedRenderer::new);
-    }
-    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
 //        @SubscribeEvent
 //        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
@@ -201,13 +197,21 @@ public class BaseMod {
 //        }
 
     }
-    @Mod.EventBusSubscriber(modid = BaseMod.MODID,bus = Mod.EventBusSubscriber.Bus.MOD)
+
+    @Mod.EventBusSubscriber(modid = BaseMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class EventsMod {
+        @SubscribeEvent
         public static void onAttributeCreate(EntityAttributeCreationEvent event) {
-            event.put(EntityMod.POSSESSED_ENTITY.get(), PossessedEntity.prepareAttributes().build());
+            event.put(EntityMod.POSSESSED_ENTITY.get(), PossessedEntity.createMonsterAttributes().build());
         }
     }
-
+    @Mod.EventBusSubscriber(modid = BaseMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientSetup {
+        @SubscribeEvent
+        public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerEntityRenderer(EntityMod.POSSESSED_ENTITY.get(), PossessedRenderer::new);
+        }
+    }
 }
 
 
