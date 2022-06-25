@@ -8,5 +8,8 @@
   "block.examplemod.rubber": "Rubber Block",
   "block.examplemod.creepingmold": "Creeping Mold",
   "block.examplemod.creepersurprise": "Creeper Surprise",
-  "item.examplemod.lightninghammer": "Lightning Hammer"
+  "item.examplemod.lightninghammer": "Lightning Hammer",
+  "entity.examplemod.possessed": "The Possessed",
+  "item.examplemod.possessed_egg": "Possessed Spawn Egg",
+  "item.examplemod.exploding_food": "Exploding Food"
 }

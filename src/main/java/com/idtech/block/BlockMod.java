@@ -5,6 +5,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 //import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 //import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
@@ -18,6 +19,8 @@ public class BlockMod {
     public static final Block CASTLE_WALL = BlockUtils.createBasicBlock("castlewall", Material.STONE);
     public static final Item CASTLE_WALL_ITEM = BlockUtils.createBlockItem(CASTLE_WALL, CreativeModeTab.TAB_MISC);
     public static final Block GEL_ORE = BlockUtils.createBasicBlock("geloreblock", Material.STONE);
+    public static final Block LAMP = BlockUtils.createBasicBlock("lamp", Material.WOOD, 2f, 15);
+    public static final Item LAMP_ITEM = BlockUtils.createBlockItem(LAMP, CreativeModeTab.TAB_MISC);
     public static final Item GEL_ORE_ITEM = BlockUtils.createBlockItem(GEL_ORE, CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     @SubscribeEvent
@@ -28,6 +31,7 @@ public class BlockMod {
         event.getRegistry().register(RubberBlock.ITEM);
         event.getRegistry().register(CreepingMoldBlock.ITEM);
         event.getRegistry().register(CreeperSurpriseBlock.ITEM);
+        event.getRegistry().register(LAMP_ITEM);
 
 
 
@@ -41,6 +45,7 @@ public class BlockMod {
         event.getRegistry().register(RubberBlock.Instance);
         event.getRegistry().register(CreepingMoldBlock.Instance);
         event.getRegistry().register(CreeperSurpriseBlock.Instance);
+        event.getRegistry().register(LAMP);
 
 
     }

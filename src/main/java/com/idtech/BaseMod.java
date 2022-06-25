@@ -56,6 +56,7 @@ public class BaseMod {
         // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
 
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -155,7 +156,7 @@ public class BaseMod {
             // event.getRegistry.register(<entity type>)
             // also register the entity attributes with:
             // GlobalEntityTypeAttributes.put(<entity type>, <entity attribute method>.func_233813_a_());
-            EntityMod.registerEntities(event);
+//            EntityMod.registerEntities(event);
 
         }
 

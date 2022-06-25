@@ -30,6 +30,9 @@ public class BlockUtils {
     public static Block createBasicBlock(String name, Material material, float strength){
         return new Block(Block.Properties.of(material).strength(strength)).setRegistryName(BaseMod.MODID, name);
     }
+    public static Block createBasicBlock(String name, Material material, float strength, int lightLevel){
+        return new Block(Block.Properties.of(material).strength(strength).requiresCorrectToolForDrops().lightLevel(state -> lightLevel)).setRegistryName(BaseMod.MODID, name);
+    }
 
 
     /**

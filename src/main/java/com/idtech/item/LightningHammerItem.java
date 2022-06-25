@@ -4,7 +4,6 @@ import com.idtech.BaseMod;
 import com.idtech.Utils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -14,10 +13,9 @@ import net.minecraftforge.common.ForgeTier;
 import org.jetbrains.annotations.NotNull;
 
 public class LightningHammerItem extends SwordItem {
-    Properties properties = new Properties().tab(CreativeModeTab.TAB_COMBAT);
     public static Tier tier = new ForgeTier(4, 1561, 8.0F, 10.0F, 3, null, ()-> Ingredient.of(ItemMod.STRUCTURE_GEL));
 
-    public static Item INSTANCE = new LightningHammerItem(tier, 7, 3.3F, new Properties().tab(CreativeModeTab.TAB_MATERIALS)).
+    public static Item INSTANCE = new LightningHammerItem(tier, 7, 3.3F, new Properties().tab(CreativeModeTab.TAB_COMBAT)).
             setRegistryName(BaseMod.MODID, "lightninghammer");
     public LightningHammerItem(Tier tier, int attackDamageIn, float attackFloatIn, Properties properties) {
         super(tier, attackDamageIn, attackFloatIn, properties);

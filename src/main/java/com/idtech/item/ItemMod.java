@@ -41,6 +41,7 @@ public class ItemMod {
         event.getRegistry().register(LightningHammerItem.INSTANCE);
         // FOOD
         event.getRegistry().register(DOOM_GUM);
+        event.getRegistry().register(FoodItemTest.INSTANCE);
         // ARMOR
         event.getRegistry().register(GEL_HELMET);
         //PROJECTILES
