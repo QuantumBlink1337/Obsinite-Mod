@@ -7,15 +7,19 @@ import com.quantumblink.item.*;
 
 //import com.idtech.world.WorldMod;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -39,6 +43,12 @@ public class BaseMod {
     // Change your modid here. Whenever modid is needed, use BaseMod.MODID
     public static final String MODID = "examplemod";
     private static final Logger LOGGER = LogManager.getLogger(BaseMod.MODID);
+    public static final CreativeModeTab CREATIVE_MODE_TAB = new CreativeModeTab("DoomguySDK") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ItemMod.GEL_ORE.get());
+        }
+    };
 
     public BaseMod() {
         // Register the setup method for modloading
@@ -48,9 +58,19 @@ public class BaseMod {
         // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
 
+        IEventBus MODbus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ItemMod.ITEMS.register(MODbus);
+        ItemMod.FOODS.register(MODbus);
+        ItemMod.TOOLS.register(MODbus);
+
+        EntityMod.ENTITIES.register(MODbus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+
+
     }
 
     /**
@@ -94,6 +114,11 @@ public class BaseMod {
     }
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
+
+    @SubscribeEvent
+    public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(EntityMod.POSSESSED_ENTITY.get(), PossessedRenderer::new);
+    }
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
 //        @SubscribeEvent
@@ -123,17 +148,17 @@ public class BaseMod {
          *
          * @param event RegistryEvent to access the item registry
          */
-        @SubscribeEvent
-        public static void registerItems(final RegistryEvent.Register<Item> event) {
-            LOGGER.info("Registering Items");
-            // Add item registry calls here.
-            // event.getRegistry.register(<item variable>)
-
-            ItemMod.registerItems(event);
-            BlockMod.registerBlockItems(event);
-            EntityMod.registerEntityEggs(event);
-
-        }
+        //@SubscribeEvent
+//        public static void registerItems(final RegistryEvent.Register<Item> event) {
+//            LOGGER.info("Registering Items");
+//            // Add item registry calls here.
+//            // event.getRegistry.register(<item variable>)
+//
+//            ItemMod.registerItems(event);
+//            BlockMod.registerBlockItems(event);
+//            EntityMod.registerEntityEggs(event);
+//
+//        }
 
 
         /**
@@ -161,21 +186,28 @@ public class BaseMod {
 
         }
 
-        @SubscribeEvent
-        public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
-            EntityMod.entityRenderers(event);
-        }
-        @SubscribeEvent
-        public static void attributeRegister(EntityAttributeCreationEvent event) {
-            EntityMod.onAttributeCreate(event);
-        }
-
-        @SubscribeEvent
-        public static void registerEnchantments(final RegistryEvent.Register<Enchantment> event){
-            EnchantmentMod.registerEnchantments(event);
-        }
+//        @SubscribeEvent
+//        public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
+//            EntityMod.entityRenderers(event);
+//        }
+//        @SubscribeEvent
+//        public static void attributeRegister(EntityAttributeCreationEvent event) {
+//            EntityMod.onAttributeCreate(event);
+//        }
+//
+//        @SubscribeEvent
+//        public static void registerEnchantments(final RegistryEvent.Register<Enchantment> event){
+//            EnchantmentMod.registerEnchantments(event);
+//        }
 
     }
+    @Mod.EventBusSubscriber(modid = BaseMod.MODID,bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class EventsMod {
+        public static void onAttributeCreate(EntityAttributeCreationEvent event) {
+            event.put(EntityMod.POSSESSED_ENTITY.get(), PossessedEntity.prepareAttributes().build());
+        }
+    }
+
 }
 
 

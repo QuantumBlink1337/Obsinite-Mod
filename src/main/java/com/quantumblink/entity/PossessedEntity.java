@@ -12,13 +12,18 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class PossessedEntity extends Zombie {
-    public static EntityType<PossessedEntity> TYPE = (EntityType<PossessedEntity>) EntityType.Builder.of(PossessedEntity::new, MobCategory.MONSTER)
-            .build("possessed").setRegistryName(BaseMod.MODID, "possessed");
-    public static Item EGG = EntityUtils.buildEntitySpawnEgg(TYPE, 0xb00101, 0xacbf1f);
+//    public static EntityType<PossessedEntity> TYPE = (EntityType<PossessedEntity>) EntityType.Builder.of(PossessedEntity::new, MobCategory.MONSTER)
+//            .build("possessed").setRegistryName(BaseMod.MODID, "possessed");
+    //public static Item EGG = EntityUtils.buildEntitySpawnEgg(TYPE, 0xb00101, 0xacbf1f);
     public PossessedEntity(EntityType<? extends Zombie> p_34271_, Level p_34272_) {
         super(p_34271_, p_34272_);
     }
-    public static AttributeSupplier.@NotNull Builder createAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.23F).add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
+    public static AttributeSupplier.@NotNull Builder prepareAttributes() {
+        return Monster.createLivingAttributes()
+                .add(Attributes.ATTACK_DAMAGE, 3.0)
+                .add(Attributes.MAX_HEALTH, 1)
+                .add(Attributes.FOLLOW_RANGE, 40.0)
+                .add(Attributes.MOVEMENT_SPEED, 0.3)
+                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 20f);
     }
 }

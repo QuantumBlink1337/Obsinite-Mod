@@ -13,7 +13,7 @@ import net.minecraftforge.common.ForgeTier;
 import org.jetbrains.annotations.NotNull;
 
 public class LightningHammerItem extends SwordItem {
-    public static Tier tier = new ForgeTier(4, 1561, 8.0F, 10.0F, 3, null, ()-> Ingredient.of(ItemMod.STRUCTURE_GEL));
+    public static Tier tier = new ForgeTier(4, 1561, 8.0F, 10.0F, 3, null, ()-> Ingredient.of(ItemMod.STRUCTURE_GEL.get()));
 
     public static Item INSTANCE = new LightningHammerItem(tier, 7, 3.3F, new Properties().tab(CreativeModeTab.TAB_COMBAT)).
             setRegistryName(BaseMod.MODID, "lightninghammer");
