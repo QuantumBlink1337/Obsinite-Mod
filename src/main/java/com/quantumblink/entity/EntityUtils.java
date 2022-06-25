@@ -1,4 +1,4 @@
-package com.idtech.entity;
+package com.quantumblink.entity;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;

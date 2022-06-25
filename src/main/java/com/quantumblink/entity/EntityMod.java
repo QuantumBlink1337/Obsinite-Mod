@@ -1,7 +1,6 @@
-package com.idtech.entity;
+package com.quantumblink.entity;
 
-import com.idtech.BaseMod;
-import net.minecraft.client.tutorial.Tutorial;
+import com.quantumblink.BaseMod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

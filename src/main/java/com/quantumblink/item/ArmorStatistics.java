@@ -1,6 +1,6 @@
-package com.idtech.item;
+package com.quantumblink.item;
 
-import com.idtech.BaseMod;
+import com.quantumblink.BaseMod;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;

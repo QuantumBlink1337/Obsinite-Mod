@@ -1,11 +1,10 @@
-package com.idtech.block;
+package com.quantumblink.block;
 
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 //import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 //import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;

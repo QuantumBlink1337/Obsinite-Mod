@@ -1,8 +1,7 @@
-package com.idtech.item;
+package com.quantumblink.item;
 
-import com.idtech.BaseMod;
+import com.quantumblink.BaseMod;
 
-import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 
 import net.minecraft.tags.Tag;
@@ -10,15 +9,12 @@ import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.Optional;
 import java.util.function.Supplier;
 
 /**

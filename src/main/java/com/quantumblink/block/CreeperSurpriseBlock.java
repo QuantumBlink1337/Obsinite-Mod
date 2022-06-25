@@ -1,7 +1,7 @@
-package com.idtech.block;
+package com.quantumblink.block;
 
-import com.idtech.BaseMod;
-import com.idtech.Utils;
+import com.quantumblink.BaseMod;
+import com.quantumblink.Utils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.PrimedTnt;

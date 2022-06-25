@@ -1,6 +1,6 @@
-package com.idtech.entity;
+package com.quantumblink.entity;
 
-import com.idtech.BaseMod;
+import com.quantumblink.BaseMod;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;

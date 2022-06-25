@@ -1,4 +1,4 @@
-package com.idtech.entity;
+package com.quantumblink.entity;
 
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

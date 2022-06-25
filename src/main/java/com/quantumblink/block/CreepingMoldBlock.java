@@ -1,7 +1,7 @@
-package com.idtech.block;
+package com.quantumblink.block;
 
-import com.idtech.BaseMod;
-import com.idtech.Utils;
+import com.quantumblink.BaseMod;
+import com.quantumblink.Utils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.CreativeModeTab;

@@ -1,6 +1,6 @@
-package com.idtech.item;
+package com.quantumblink.item;
 
-import com.idtech.BaseMod;
+import com.quantumblink.BaseMod;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;

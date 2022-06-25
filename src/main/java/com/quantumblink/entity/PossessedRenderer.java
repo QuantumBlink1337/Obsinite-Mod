@@ -1,6 +1,6 @@
-package com.idtech.entity;
+package com.quantumblink.entity;
 
-import com.idtech.BaseMod;
+import com.quantumblink.BaseMod;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ZombieRenderer;
 import net.minecraft.resources.ResourceLocation;
