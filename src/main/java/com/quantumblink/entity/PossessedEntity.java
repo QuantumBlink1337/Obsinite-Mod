@@ -1,13 +1,10 @@
 package com.quantumblink.entity;
 
-import com.quantumblink.BaseMod;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
@@ -21,10 +18,15 @@ public class PossessedEntity extends Zombie {
     public static AttributeSupplier.@NotNull Builder createMonsterAttributes() {
         return Monster.createLivingAttributes()
                 .add(Attributes.ATTACK_DAMAGE, 3.0)
-                .add(Attributes.MAX_HEALTH, 1)
+                .add(Attributes.MAX_HEALTH, 20)
                 .add(Attributes.FOLLOW_RANGE, 40.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.3)
                 .add(Attributes.ATTACK_KNOCKBACK, 4)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 20f);
     }
+    @Override
+    protected boolean isSunSensitive() {
+        return false;
+    }
+
 }
