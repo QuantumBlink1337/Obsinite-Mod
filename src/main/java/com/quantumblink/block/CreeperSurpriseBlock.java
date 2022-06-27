@@ -18,8 +18,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class CreeperSurpriseBlock extends Block {
     private static final Properties properties = Properties.of(Material.STONE);
-    public static final Block Instance = new CreeperSurpriseBlock(properties).setRegistryName(BaseMod.MODID, "creepersurprise");
-    public static final Item ITEM = BlockUtils.createBlockItem(Instance, CreativeModeTab.TAB_COMBAT);
+    public static final Block INSTANCE = new CreeperSurpriseBlock(properties);
     public CreeperSurpriseBlock(Properties p_49795_) {
         super(p_49795_);
     }

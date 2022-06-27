@@ -15,8 +15,7 @@ import java.util.Random;
 
 public class CreepingMoldBlock extends Block {
     private static final Properties properties = Properties.of(Material.AMETHYST).randomTicks().strength(1.5f);
-    public static final Block Instance = new CreepingMoldBlock(properties).setRegistryName(BaseMod.MODID, "creepingmold");
-    public static final Item ITEM = BlockUtils.createBlockItem(Instance, CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final Block Instance = new CreepingMoldBlock(properties);
     public CreepingMoldBlock(Properties p_49795_) {
         super(p_49795_);
 

@@ -13,8 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class RubberBlock extends Block {
     private static final Properties properties = Properties.of(Material.STONE);
-    public static Block Instance = new RubberBlock(properties).setRegistryName(BaseMod.MODID, "rubber");
-    public static Item ITEM = BlockUtils.createBlockItem(Instance, CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static Block Instance = new RubberBlock(properties);
     public RubberBlock(Properties p_49795_) {
         super(p_49795_);
     }
