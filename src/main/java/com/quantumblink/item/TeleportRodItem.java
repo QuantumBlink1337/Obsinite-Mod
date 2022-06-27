@@ -12,8 +12,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class TeleportRodItem extends Item {
-    private static final Properties properties = new Item.Properties().tab(CreativeModeTab.TAB_MISC);
-    public static Item INSTANCE = new TeleportRodItem(properties).setRegistryName("teleportrod");
+    public static Item INSTANCE = new TeleportRodItem(ItemMod.ITEM_PROPERTIES);
     public TeleportRodItem(Properties properties) {
         super(properties);
     }

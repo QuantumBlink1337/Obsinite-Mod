@@ -17,7 +17,7 @@ public class ExplodingFood extends Item {
 //    private static final Supplier<MobEffectInstance> foodEffect = () -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 500, 1);
     private static final FoodProperties foodProperties = new FoodProperties.Builder().nutrition(10).saturationMod(10).alwaysEat().build();
     public static final Properties properties =ITEM_PROPERTIES.food(foodProperties);
-    //public static Item INSTANCE = new FoodItemTest(properties).setRegistryName(BaseMod.MODID, "exploding_food");
+    public static final Item INSTANCE = new ExplodingFood(properties);
     public ExplodingFood(Properties p_41383_) {
         super(p_41383_);
     }
