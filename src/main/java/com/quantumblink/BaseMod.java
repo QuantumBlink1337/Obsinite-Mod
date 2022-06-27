@@ -59,10 +59,12 @@ public class BaseMod {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
 
         IEventBus MODbus = FMLJavaModLoadingContext.get().getModEventBus();
+        BlockMod.BLOCKS.register(MODbus);
 
         ItemMod.ITEMS.register(MODbus);
         ItemMod.FOODS.register(MODbus);
         ItemMod.TOOLS.register(MODbus);
+
 
         EntityMod.ENTITIES.register(MODbus);
 
@@ -130,11 +132,9 @@ public class BaseMod {
          */
         @SubscribeEvent
         public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-            LOGGER.info("Registering Blocks");
 
 
 //            event.getRegistry().register(BlockMod.CASTLE_WALL);
-            BlockMod.registerBlocks(event);
 
         }
 
