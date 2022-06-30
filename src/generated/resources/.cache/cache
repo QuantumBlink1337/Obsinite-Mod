@@ -1,0 +1,11 @@
+1da6a96cae4231df86603cc66a8e7a282a5aabbc assets/examplemod/blockstates/powergen.json
+df8f35ea6570373cb474d6dfc81d61a0448a1be7 assets/examplemod/lang/en_us.json
+eb9c5fe4a5aad6d5ea0b319460113d92912db4b7 assets/examplemod/models/block/powergen/main.json
+8d345052af4895017f73ccdc0ea6b2419e759dd9 assets/examplemod/models/block/powergen/singleoff.json
+211a3b47a6d2239af008ee300e2bdb33fb2fba2a assets/examplemod/models/block/powergen/singleon.json
+4efec4cf519b4593e2b7a7aecefd734fadc62729 assets/examplemod/models/item/powergen.json
+a96df6f516045d52700863b78ed4644757f53642 data/examplemod/loot_tables/blocks/powergen.json
+74700d556ca80c7a1db5fd4efb09c3ddb26cad66 data/forge/tags/blocks/ores.json
+74700d556ca80c7a1db5fd4efb09c3ddb26cad66 data/forge/tags/items/ores.json
+c7751a8442395e736847557ce793aca6ad7baa36 data/minecraft/tags/blocks/mineable/pickaxe.json
+c7751a8442395e736847557ce793aca6ad7baa36 data/minecraft/tags/blocks/needs_iron_tool.json

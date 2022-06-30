@@ -1,0 +1,6 @@
+{
+  "block.examplemod.powergen": "Power generator",
+  "itemGroup.com.quantumblink.BaseMod$1@17e77d57": "Tutorial",
+  "message.powergen": "Power generator generating %s per tick!",
+  "screen.tutorial.powergen": "Power generator"
+}
