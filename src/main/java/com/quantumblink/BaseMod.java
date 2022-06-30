@@ -1,16 +1,14 @@
 package com.quantumblink;
 
 import com.quantumblink.block.*;
-import com.quantumblink.enchantment.EnchantmentMod;
+import com.quantumblink.blockentity.BlockEntityMod;
 import com.quantumblink.entity.*;
 import com.quantumblink.item.*;
 
 //import com.idtech.world.WorldMod;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
@@ -67,6 +65,8 @@ public class BaseMod {
 
 
         EntityMod.ENTITIES.register(MODbus);
+        BlockEntityMod.BLOCK_ENTITIES.register(MODbus);
+        BlockEntityMod.CONTAINERS.register(MODbus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

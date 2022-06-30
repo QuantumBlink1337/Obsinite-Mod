@@ -39,28 +39,10 @@ public class ItemMod {
     public static final RegistryObject<Item> EXPLODING_FOOD = FOODS.register("exploding_food", () -> ExplodingFood.INSTANCE);
     public static final RegistryObject<Item> POSSESSED_EGG = ITEMS.register("possessed_spawn_egg", () -> new ForgeSpawnEggItem(EntityMod.POSSESSED_ENTITY, 0xff0000, 0x00ff00, ITEM_PROPERTIES));
 
+    // TOOLS
     public static final RegistryObject<Item> LIGHTNING_HAMMER = TOOLS.register("lightning_hammer", () -> LightningHammerItem.INSTANCE);
     public static final RegistryObject<Item> GEL_PICKAXE = TOOLS.register("gel_pickaxe", () -> GelPickaxeItem.INSTANCE);
-
     public static final RegistryObject<Item> TELEPORT_ROD = ITEMS.register("teleport_rod", () -> TeleportRodItem.INSTANCE);
 
     //public static final ArmorItem GEL_HELMET = (ArmorItem) new ArmorItem(ArmorStatistics.GEL, EquipmentSlot.HEAD, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)).setRegistryName(BaseMod.MODID, "gel_helmet");
-
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
-
-        //BASIC ITEMS
-        //event.getRegistry().register(STRUCTURE_GEL);
-        //event.getRegistry().register(GEL_ORE);
-//        event.getRegistry().register(TeleportRodItem.INSTANCE);
-//        // ITEMS
-//        // TOOLS
-//        event.getRegistry().register(GelPickaxeItem.INSTANCE);
-//        event.getRegistry().register(LightningHammerItem.INSTANCE);
-        // FOOD
-        //event.getRegistry().register(FoodItemTest.INSTANCE);
-        // ARMOR
-        //PROJECTILES
-
-    }
 }

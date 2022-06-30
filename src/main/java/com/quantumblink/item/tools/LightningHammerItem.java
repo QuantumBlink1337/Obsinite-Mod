@@ -6,6 +6,7 @@ import com.quantumblink.item.ItemMod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -25,8 +26,9 @@ public class LightningHammerItem extends SwordItem {
         ItemStack itemStack = playerIn.getItemInHand(handIn);
         BlockPos blockPos = Utils.getBlockAtCursor(playerIn, 20.0d, true);
         if (blockPos != null) {
-            Utils.createExplosion(level, blockPos, 0.5f);
-            Utils.strikeLightning(level, blockPos);
+            playerIn.die(DamageSource.DRAGON_BREATH);
+            //Utils.createExplosion(level, blockPos, 0.5f);
+            //Utils.strikeLightning(level, blockPos);
         }
         return InteractionResultHolder.pass(itemStack);
     }

@@ -128,6 +128,7 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
     // flatDir {
     //     dir 'libs'
@@ -148,6 +149,7 @@ dependencies {
     // Examples using mod jars from ./libs
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
 
+
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
@@ -155,6 +157,12 @@ dependencies {
 
     // compile against the JEI API but do not include it at runtime
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
+    //compileOnly group: 'org.asynchttpclient', name: 'async-http-client-bom', version: '2.12.3'
+
+    // https://mvnrepository.com/artifact/org.asynchttpclient/async-http-client
+    implementation group: 'org.asynchttpclient', name: 'async-http-client', version: '2.12.3'
+
+
     // at runtime, use the full JEI jar
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 
