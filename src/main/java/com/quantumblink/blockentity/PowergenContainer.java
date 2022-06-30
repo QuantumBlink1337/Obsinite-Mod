@@ -1,6 +1,6 @@
 package com.quantumblink.blockentity;
 
-import com.quantumblink.BaseMod;
+
 import com.quantumblink.util.CustomEnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
@@ -24,20 +24,18 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 public class PowergenContainer extends AbstractContainerMenu {
-    private BlockEntity blockEntity;
-    private Player playerEntity;
-    private IItemHandler playerInventory;
+    private final BlockEntity blockEntity;
+    private final Player playerEntity;
+    private final IItemHandler playerInventory;
 
     public PowergenContainer(int windowId, BlockPos pos, Inventory playerInventory, Player player) {
-        super(BlockEntityMod., windowId);
+        super(BlockEntityMod.POWERGEN_CONTAINER.get(), windowId);
         blockEntity = player.getCommandSenderWorld().getBlockEntity(pos);
         this.playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
 
         if (blockEntity != null) {
-            blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
-                addSlot(new SlotItemHandler(h, 0, 64, 24));
-            });
+            blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 64, 24)));
         }
         layoutPlayerInventorySlots(10, 70);
     }
@@ -52,7 +50,7 @@ public class PowergenContainer extends AbstractContainerMenu {
 
             @Override
             public void set(int value) {
-                blockEntity.getCapability(CapabilityEnergy.ENERGY).ifPresent(h -> {
+                Objects.requireNonNull(blockEntity).getCapability(CapabilityEnergy.ENERGY).ifPresent(h -> {
                     int energyStored = h.getEnergyStored() & 0xffff0000;
                     ((CustomEnergyStorage)h).setEnergy(energyStored + (value & 0xffff));
                 });
@@ -66,7 +64,7 @@ public class PowergenContainer extends AbstractContainerMenu {
 
             @Override
             public void set(int value) {
-                blockEntity.getCapability(CapabilityEnergy.ENERGY).ifPresent(h -> {
+                Objects.requireNonNull(blockEntity).getCapability(CapabilityEnergy.ENERGY).ifPresent(h -> {
                     int energyStored = h.getEnergyStored() & 0x0000ffff;
                     ((CustomEnergyStorage)h).setEnergy(energyStored | (value << 16));
                 });
@@ -81,10 +79,10 @@ public class PowergenContainer extends AbstractContainerMenu {
         return blockEntity.getCapability(CapabilityEnergy.ENERGY).map(IEnergyStorage::getEnergyStored).orElse(0);
     }
     @Override
-    public ItemStack quickMoveStack(Player playerIn, int index) {
+    public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int index) {
         ItemStack itemstack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
-        if (slot != null && slot.hasItem()) {
+        if (slot.hasItem()) {
             ItemStack stack = slot.getItem();
             itemstack = stack.copy();
             if (index == 0) {

@@ -1,6 +1,5 @@
 package com.quantumblink.blockentity;
 
-import com.quantumblink.BaseMod;
 import com.quantumblink.util.CustomEnergyStorage;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -19,9 +18,11 @@ import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PowergenBE extends BlockEntity {
@@ -39,7 +40,7 @@ public class PowergenBE extends BlockEntity {
     private int counter;
 
     public PowergenBE(BlockPos pos, BlockState state) {
-        super(BaseMod.POWERGEN_BE.get(), pos, state);
+        super(BlockEntityMod.POWERGEN_BE.get(), pos, state);
     }
     @Override
     public void setRemoved() {
@@ -62,7 +63,7 @@ public class PowergenBE extends BlockEntity {
                 setChanged();
             }
         }
-        BlockState blockState = level.getBlockState(worldPosition);
+        BlockState blockState = Objects.requireNonNull(level).getBlockState(worldPosition);
         if (blockState.getValue(BlockStateProperties.POWERED) != counter > 0) {
             level.setBlock(worldPosition, blockState.setValue(BlockStateProperties.POWERED, counter >0), Block.UPDATE_ALL);
         }
@@ -72,7 +73,7 @@ public class PowergenBE extends BlockEntity {
         AtomicInteger capacity = new AtomicInteger(energyStorage.getEnergyStored());
         if (capacity.get() > 0) {
             for (Direction direction : Direction.values()) {
-                BlockEntity be = level.getBlockEntity(worldPosition.relative(direction));
+                BlockEntity be = Objects.requireNonNull(level).getBlockEntity(worldPosition.relative(direction));
                 if (be != null) {
                     boolean doContinue = be.getCapability(CapabilityEnergy.ENERGY, direction.getOpposite()).map(handler -> {
                         if (handler.canReceive()) {
@@ -127,12 +128,12 @@ public class PowergenBE extends BlockEntity {
             }
 
             @Override
-            public boolean isItemValid(int slot, ItemStack stack) {
+            public boolean isItemValid(int slot, @NotNull ItemStack stack) {
                 return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
             }
 
             @Override
-            public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+            public @NotNull ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
                 if (ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) <= 0) {
                     return stack;
                 }
@@ -150,7 +151,7 @@ public class PowergenBE extends BlockEntity {
     }
 
     @Override
-    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+    public <T> @NotNull LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             return handler.cast();
         }

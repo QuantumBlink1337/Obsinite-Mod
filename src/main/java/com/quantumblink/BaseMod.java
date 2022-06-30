@@ -2,10 +2,15 @@ package com.quantumblink;
 
 import com.quantumblink.block.*;
 import com.quantumblink.blockentity.BlockEntityMod;
+import com.quantumblink.blockentity.PowergenScreen;
+import com.quantumblink.config.Config;
 import com.quantumblink.entity.*;
 import com.quantumblink.item.*;
 
 //import com.idtech.world.WorldMod;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -21,6 +26,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -68,8 +74,11 @@ public class BaseMod {
         BlockEntityMod.BLOCK_ENTITIES.register(MODbus);
         BlockEntityMod.CONTAINERS.register(MODbus);
 
+        Config.register();
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
 
 
     }
@@ -210,6 +219,13 @@ public class BaseMod {
         @SubscribeEvent
         public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
             event.registerEntityRenderer(EntityMod.POSSESSED_ENTITY.get(), PossessedRenderer::new);
+        }
+        @SubscribeEvent
+        public static void init(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                MenuScreens.register(BlockEntityMod.POWERGEN_CONTAINER.get(), PowergenScreen::new);           // Attach our container to the screen
+                ItemBlockRenderTypes.setRenderLayer(BlockEntityMod.POWERGEN.get(), RenderType.translucent()); // Set the render type for our power generator to translucent
+            });
         }
     }
 }
