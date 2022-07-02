@@ -22,7 +22,11 @@ import net.minecraftforge.items.wrapper.InvWrapper;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
-
+/*
+    Responsible for communicating between the client and the server when the player opens the GUI.
+    This adds "slots" for every item that should be synchronized between the client/server.
+    For powergen, this is the coal slot and all of the player's inventory slots excluding armor.
+ */
 public class PowergenContainer extends AbstractContainerMenu {
     private final BlockEntity blockEntity;
     private final Player playerEntity;
@@ -32,12 +36,14 @@ public class PowergenContainer extends AbstractContainerMenu {
         super(BlockEntityMod.POWERGEN_CONTAINER.get(), windowId);
         blockEntity = player.getCommandSenderWorld().getBlockEntity(pos);
         this.playerEntity = player;
+        // Lone instance of directly using the player Inventory. Put in a InvWrapper.
         this.playerInventory = new InvWrapper(playerInventory);
 
         if (blockEntity != null) {
             blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> addSlot(new SlotItemHandler(h, 0, 64, 24)));
         }
         layoutPlayerInventorySlots(10, 70);
+        trackPower();
     }
     private void trackPower() {
         // Unfortunatelly on a dedicated server ints are actually truncated to short so we need
@@ -78,6 +84,9 @@ public class PowergenContainer extends AbstractContainerMenu {
     public int getEnergy() {
         return blockEntity.getCapability(CapabilityEnergy.ENERGY).map(IEnergyStorage::getEnergyStored).orElse(0);
     }
+    /*
+        This faciliates shift clicking items into a slot.
+     */
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int index) {
         ItemStack itemstack = ItemStack.EMPTY;

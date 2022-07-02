@@ -1,11 +1,8 @@
 package com.quantumblink.block;
 
-import com.quantumblink.BaseMod;
-import com.quantumblink.Utils;
+import com.quantumblink.util.Utils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;

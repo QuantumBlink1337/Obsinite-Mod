@@ -15,11 +15,11 @@ public class LanguageProviderGen extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("itemGroup." + BaseMod.CREATIVE_MODE_TAB, "Tutorial");
-        add(MESSAGE_POWERGEN, "Power generator generating %s per tick!");
-        add(SCREEN_TUTORIAL_POWERGEN, "Power generator");
+        //add(MESSAGE_POWERGEN, "Power generator generating %s per tick!");
+        add(SCREEN_TUTORIAL_POWERGEN, "Power Generator");
 
-        BlockEntityMod Registration;
-        add(BlockEntityMod.POWERGEN.get(), "Power generator");
+        //BlockEntityMod Registration;
+        add(BlockEntityMod.POWERGEN.get(), "Power Generator");
 //        add(Registration.MYSTERIOUS_ORE_OVERWORLD.get(), "Mysterious ore");
 //        add(Registration.MYSTERIOUS_ORE_NETHER.get(), "Mysterious ore");
 //        add(Registration.MYSTERIOUS_ORE_END.get(), "Mysterious ore");
