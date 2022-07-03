@@ -7,8 +7,6 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.Dsl;
 import org.jetbrains.annotations.NotNull;
 import static com.quantumblink.item.ItemMod.ITEM_PROPERTIES;
 
@@ -24,7 +22,6 @@ public class ExplodingFood extends Item {
     @Override
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack p_41409_, @NotNull Level p_41410_, LivingEntity p_41411_) {
         BlockPos blockPos = p_41411_.blockPosition();
-        AsyncHttpClient client = Dsl.asyncHttpClient();
         Utils.createExplosion(p_41410_, blockPos, 3);
         return this.isEdible() ? p_41411_.eat(p_41410_, p_41409_) : p_41409_;
 

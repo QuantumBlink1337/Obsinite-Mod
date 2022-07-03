@@ -22,9 +22,8 @@ public class LightningHammerItem extends SwordItem {
         ItemStack itemStack = playerIn.getItemInHand(handIn);
         BlockPos blockPos = Utils.getBlockAtCursor(playerIn, 20.0d, true);
         if (blockPos != null) {
-            playerIn.die(DamageSource.DRAGON_BREATH);
-            //Utils.createExplosion(level, blockPos, 0.5f);
-            //Utils.strikeLightning(level, blockPos);
+            Utils.createExplosion(level, blockPos, 0.5f);
+            Utils.strikeLightning(level, blockPos);
         }
         return InteractionResultHolder.pass(itemStack);
     }
