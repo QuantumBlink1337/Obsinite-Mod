@@ -1,7 +1,9 @@
 package com.quantumblink.datagen;
 
 import com.quantumblink.BaseMod;
+import com.quantumblink.block.BlockMod;
 import com.quantumblink.blockentity.BlockEntityMod;
+import com.quantumblink.item.ItemMod;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -20,6 +22,8 @@ public class LanguageProviderGen extends LanguageProvider {
 
         //BlockEntityMod Registration;
         add(BlockEntityMod.POWERGEN.get(), "Power Generator");
+        add(BlockMod.CINNABAR_ORE.get(), "Cinnabar Ore");
+        add(ItemMod.CINNABAR.get(), "Cinnabar");
 //        add(Registration.MYSTERIOUS_ORE_OVERWORLD.get(), "Mysterious ore");
 //        add(Registration.MYSTERIOUS_ORE_NETHER.get(), "Mysterious ore");
 //        add(Registration.MYSTERIOUS_ORE_END.get(), "Mysterious ore");

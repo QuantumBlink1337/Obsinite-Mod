@@ -1,6 +1,7 @@
 package com.quantumblink.datagen;
 
 import com.quantumblink.BaseMod;
+import com.quantumblink.block.BlockMod;
 import com.quantumblink.blockentity.BlockEntityMod;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -16,11 +17,14 @@ public class BlockTagsGen extends BlockTagsProvider {
     @Override
     protected void addTags() {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(BlockEntityMod.POWERGEN.get());
+                .add(BlockEntityMod.POWERGEN.get())
+                .add(BlockMod.CINNABAR_ORE.get());
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(BlockEntityMod.POWERGEN.get());
+        tag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(BlockMod.CINNABAR_ORE.get());
         tag(Tags.Blocks.ORES)
-                ;
+                .add(BlockMod.CINNABAR_ORE.get());
     }
     @Override
     public @NotNull String getName() {
