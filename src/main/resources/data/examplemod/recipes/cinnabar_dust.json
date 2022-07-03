@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient":
+  {
+    "item": "examplemod:cinnabar"
+  },
+  "result": "examplemod:cinnabar_dust",
+  "count": 1
+}

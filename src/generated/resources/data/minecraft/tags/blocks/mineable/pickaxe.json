@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "examplemod:powergen"
+    "examplemod:powergen",
+    "examplemod:cinnabar_ore"
   ]
 }

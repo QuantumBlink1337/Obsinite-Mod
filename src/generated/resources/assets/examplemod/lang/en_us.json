@@ -1,5 +1,7 @@
 {
+  "block.examplemod.cinnabar_ore": "Cinnabar Ore",
   "block.examplemod.powergen": "Power Generator",
-  "itemGroup.com.quantumblink.BaseMod$1@24b2e53b": "Tutorial",
+  "item.examplemod.cinnabar": "Cinnabar",
+  "itemGroup.com.quantumblink.BaseMod$1@56f2cdb5": "Tutorial",
   "screen.tutorial.powergen": "Power Generator"
 }
