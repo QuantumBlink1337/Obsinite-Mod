@@ -8,6 +8,7 @@ import com.quantumblink.entity.*;
 import com.quantumblink.item.*;
 
 //import com.idtech.world.WorldMod;
+import com.quantumblink.worldgen.Ores;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -22,6 +23,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -65,6 +67,8 @@ public class BaseMod {
 
         IEventBus MODbus = FMLJavaModLoadingContext.get().getModEventBus();
         Config.register();
+        EventsMod.setup();
+
         BlockMod.BLOCKS.register(MODbus);
 
         ItemMod.ITEMS.register(MODbus);
@@ -213,6 +217,14 @@ public class BaseMod {
         @SubscribeEvent
         public static void onAttributeCreate(EntityAttributeCreationEvent event) {
             event.put(EntityMod.POSSESSED_ENTITY.get(), PossessedEntity.createMonsterAttributes().build());
+        }
+
+        public static void setup() {
+            IEventBus bus = MinecraftForge.EVENT_BUS;
+            bus.addListener(Ores::onBiomeLoadingEvent);
+        }
+        public static void init(FMLCommonSetupEvent event) {
+            event.enqueueWork(Ores::registerConfiguredFeatures);
         }
     }
     @Mod.EventBusSubscriber(modid = BaseMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
