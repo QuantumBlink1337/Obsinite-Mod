@@ -12,8 +12,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public enum ArmorStatistics implements ArmorMaterial {
-    GEL("gel", 10, new int[]{3, 5, 4, 2}, 12,
-            SoundEvents.ARMOR_EQUIP_CHAIN, 1.5f, 0.0f, () -> Ingredient.of(ItemMod.STRUCTURE_GEL.get()));
+    OBSINITE("obsinite", 10, new int[]{3, 5, 4, 2}, 12,
+            SoundEvents.ARMOR_EQUIP_CHAIN, 1.5f, 0.0f, () -> Ingredient.of(ItemMod.OBSINITE.get()));
 
 
     private static final int[] HEALTH_FOR_SLOT = new int[]{3, 6, 9, 12};
