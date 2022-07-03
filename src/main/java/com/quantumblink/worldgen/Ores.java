@@ -34,7 +34,7 @@ public class Ores {
 //                HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(64)));
 
         OreConfiguration overworldConfig = new OreConfiguration(OreFeatures.STONE_ORE_REPLACEABLES, BlockMod.CINNABAR_ORE.get().defaultBlockState(), OresConfig.OVERWORLD_VEINSIZE.get());
-        OVERWORLD_OREGEN = registerPlacedFeature("overworld_mysterious_ore", new ConfiguredFeature<>(Feature.ORE, overworldConfig),
+        OVERWORLD_OREGEN = registerPlacedFeature("cinnabar_ore_overworld", new ConfiguredFeature<>(Feature.ORE, overworldConfig),
                 CountPlacement.of(OresConfig.OVERWORLD_AMOUNT.get()),
                 InSquarePlacement.spread(),
                 //new DimensionBiomeFilter(key -> !Dimensions.MYSTERIOUS.equals(key)),
