@@ -68,22 +68,15 @@ public class BaseMod {
         IEventBus MODbus = FMLJavaModLoadingContext.get().getModEventBus();
         Config.register();
         EventsMod.setup();
-
         BlockMod.BLOCKS.register(MODbus);
-
         ItemMod.ITEMS.register(MODbus);
         ItemMod.FOODS.register(MODbus);
         ItemMod.TOOLS.register(MODbus);
         EntityMod.ENTITIES.register(MODbus);
         BlockEntityMod.BLOCK_ENTITIES.register(MODbus);
         BlockEntityMod.CONTAINERS.register(MODbus);
-
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
-
-
     }
 
     /**
@@ -128,87 +121,6 @@ public class BaseMod {
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
 
-
-    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents {
-//        @SubscribeEvent
-//        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-//            // register a new block here
-//            LOGGER.info("HELLO from Register Block");
-//        }
-
-        /**
-         * Registers block during mod setup
-         *
-         * @param event RegistryEvent to access the block registry
-         */
-        @SubscribeEvent
-        public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-
-
-//            event.getRegistry().register(BlockMod.CASTLE_WALL);
-
-        }
-
-
-        /**
-         * Registers item during mod setup
-         *
-         * @param event RegistryEvent to access the item registry
-         */
-        //@SubscribeEvent
-//        public static void registerItems(final RegistryEvent.Register<Item> event) {
-//            LOGGER.info("Registering Items");
-//            // Add item registry calls here.
-//            // event.getRegistry.register(<item variable>)
-//
-//            ItemMod.registerItems(event);
-//            BlockMod.registerBlockItems(event);
-//            EntityMod.registerEntityEggs(event);
-//
-//        }
-
-
-        /**
-         * Registers entities during mod setup
-         *
-         * @param event RegistryEvent to access the entity registry
-         */
-        @SubscribeEvent
-        public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event) {
-            BaseMod.LOGGER.info("Registering Entities");
-            // Add item registry calls here.
-            // event.getRegistry.register(<entity type>)
-            // also register the entity attributes with:
-            // GlobalEntityTypeAttributes.put(<entity type>, <entity attribute method>.func_233813_a_());
-//            EntityMod.registerEntities(event);
-
-        }
-
-        @SubscribeEvent
-        public static void registerBiomes(final RegistryEvent.Register<Biome> event) {
-            BaseMod.LOGGER.info("Registering Biomes");
-            // Add biome registry calls here
-            // event.getRegistry.register(<biome variable>)
-//            WorldMod.registerBiomes(event);
-
-        }
-
-//        @SubscribeEvent
-//        public static void entityRenderers(final EntityRenderersEvent.RegisterRenderers event){
-//            EntityMod.entityRenderers(event);
-//        }
-//        @SubscribeEvent
-//        public static void attributeRegister(EntityAttributeCreationEvent event) {
-//            EntityMod.onAttributeCreate(event);
-//        }
-//
-//        @SubscribeEvent
-//        public static void registerEnchantments(final RegistryEvent.Register<Enchantment> event){
-//            EnchantmentMod.registerEnchantments(event);
-//        }
-
-    }
 
     @Mod.EventBusSubscriber(modid = BaseMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class EventsMod {
