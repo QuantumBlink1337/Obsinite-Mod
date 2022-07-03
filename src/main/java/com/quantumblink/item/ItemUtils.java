@@ -13,6 +13,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Supplier;
@@ -79,7 +80,7 @@ public class ItemUtils {
      */
     public static ArmorMaterial buildArmorMaterial(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountArrayIn, int enchantabilityIn, SoundEvent eqiupSoundIn,
                                                    float toughnessIn, float knockbackResistanceIn, Tag<Item> itemTag){
-        Supplier<Ingredient> ingredientSupplier = () -> Ingredient.of(itemTag);
+        Supplier<Ingredient> ingredientSupplier = () -> Ingredient.of((ItemLike) itemTag);
         return buildArmorMaterial(nameIn, maxDamageFactorIn, damageReductionAmountArrayIn, enchantabilityIn, eqiupSoundIn, toughnessIn, knockbackResistanceIn, ingredientSupplier);
 
     }
