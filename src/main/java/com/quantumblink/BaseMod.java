@@ -50,7 +50,7 @@ public class BaseMod {
     // Change your modid here. Whenever modid is needed, use BaseMod.MODID
     public static final String MODID = "examplemod";
     private static final Logger LOGGER = LogManager.getLogger(BaseMod.MODID);
-    public static final CreativeModeTab CREATIVE_MODE_TAB = new CreativeModeTab("DoomguySDK") {
+    public static final CreativeModeTab CREATIVE_MODE_TAB = new CreativeModeTab("Obsinite") {
         @Override
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ItemMod.CINNABAR.get());
@@ -74,8 +74,6 @@ public class BaseMod {
         ItemMod.ITEMS.register(MODbus);
         ItemMod.FOODS.register(MODbus);
         ItemMod.TOOLS.register(MODbus);
-
-
         EntityMod.ENTITIES.register(MODbus);
         BlockEntityMod.BLOCK_ENTITIES.register(MODbus);
         BlockEntityMod.CONTAINERS.register(MODbus);
@@ -223,6 +221,7 @@ public class BaseMod {
             IEventBus bus = MinecraftForge.EVENT_BUS;
             bus.addListener(Ores::onBiomeLoadingEvent);
         }
+        @SubscribeEvent
         public static void init(FMLCommonSetupEvent event) {
             event.enqueueWork(Ores::registerConfiguredFeatures);
         }
