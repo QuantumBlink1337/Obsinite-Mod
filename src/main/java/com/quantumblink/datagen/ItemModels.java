@@ -1,6 +1,7 @@
 package com.quantumblink.datagen;
 
 import com.quantumblink.BaseMod;
+import com.quantumblink.block.BlockMod;
 import com.quantumblink.blockentity.BlockEntityMod;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -13,5 +14,6 @@ public class ItemModels extends ItemModelProvider {
     @Override
     protected void registerModels() {
         withExistingParent(BlockEntityMod.POWERGEN_ITEM.get().getRegistryName().getPath(), modLoc("block/powergen/main"));
+        withExistingParent(BlockMod.CINNABAR_ORE_ITEM.get().getRegistryName().getPath(), modLoc("block/cinnabar_ore"));
     }
 }

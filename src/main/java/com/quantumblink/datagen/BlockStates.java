@@ -1,6 +1,7 @@
 package com.quantumblink.datagen;
 
 import com.quantumblink.BaseMod;
+import com.quantumblink.block.BlockMod;
 import com.quantumblink.blockentity.BlockEntityMod;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
@@ -18,6 +19,7 @@ public class BlockStates extends BlockStateProvider {
     }
     @Override
     protected void registerStatesAndModels() {
+        simpleBlock(BlockMod.CINNABAR_ORE.get());
         registerPowergen();
     }
     private void registerPowergen() {
