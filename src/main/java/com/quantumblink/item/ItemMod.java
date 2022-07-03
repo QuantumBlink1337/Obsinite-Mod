@@ -29,8 +29,10 @@ public class ItemMod {
 
 
     //BASIC ITEMS
-    public static final RegistryObject<Item> STRUCTURE_GEL = ITEMS.register("structure_gel", () -> new Item(ITEM_PROPERTIES));
-    public static final RegistryObject<Item> GEL_ORE = ITEMS.register("gel_ore", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> CINNABAR = ITEMS.register("cinnabar", () -> new Item(ITEM_PROPERTIES));
+    public static final RegistryObject<Item> CINNABAR_DUST = ITEMS.register("cinnabar_dust", () -> new Item(ITEM_PROPERTIES));
+    public static final RegistryObject<Item> MERCURY = ITEMS.register("mercury", () -> new Item(ITEM_PROPERTIES));
+    public static final RegistryObject<Item> OBSINITE = ITEMS.register("obsinite_ingot", () -> new Item(ITEM_PROPERTIES));
 
     //FOODS
     private static final Supplier<MobEffectInstance> DOOMGUM_MOB_EFFECT = () -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 500, 1);

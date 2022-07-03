@@ -1,4 +1,4 @@
-package com.quantumblink;
+package com.quantumblink.util;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

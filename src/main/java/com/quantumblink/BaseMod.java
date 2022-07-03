@@ -2,7 +2,7 @@ package com.quantumblink;
 
 import com.quantumblink.block.*;
 import com.quantumblink.blockentity.BlockEntityMod;
-import com.quantumblink.blockentity.PowergenScreen;
+import com.quantumblink.client.PowergenScreen;
 import com.quantumblink.config.Config;
 import com.quantumblink.entity.*;
 import com.quantumblink.item.*;
@@ -33,6 +33,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.stream.Collectors;
 
@@ -49,8 +50,8 @@ public class BaseMod {
     private static final Logger LOGGER = LogManager.getLogger(BaseMod.MODID);
     public static final CreativeModeTab CREATIVE_MODE_TAB = new CreativeModeTab("DoomguySDK") {
         @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(ItemMod.GEL_ORE.get());
+        public @NotNull ItemStack makeIcon() {
+            return new ItemStack(ItemMod.CINNABAR.get());
         }
     };
 
@@ -63,6 +64,7 @@ public class BaseMod {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
 
         IEventBus MODbus = FMLJavaModLoadingContext.get().getModEventBus();
+        Config.register();
         BlockMod.BLOCKS.register(MODbus);
 
         ItemMod.ITEMS.register(MODbus);
@@ -74,7 +76,6 @@ public class BaseMod {
         BlockEntityMod.BLOCK_ENTITIES.register(MODbus);
         BlockEntityMod.CONTAINERS.register(MODbus);
 
-        Config.register();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

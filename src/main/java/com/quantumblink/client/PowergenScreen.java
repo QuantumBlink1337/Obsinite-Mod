@@ -1,8 +1,9 @@
-package com.quantumblink.blockentity;
+package com.quantumblink.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.quantumblink.BaseMod;
+import com.quantumblink.blockentity.PowergenContainer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
