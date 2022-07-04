@@ -58,7 +58,7 @@ public class PowergenBlock extends Block implements EntityBlock {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable BlockGetter reader, List<Component> list, TooltipFlag flags) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable BlockGetter reader, List<Component> list, TooltipFlag flags) {
         list.add(new TranslatableComponent(MESSAGE_POWERGEN, Integer.toString(PowergenBE.POWERGEN_GENERATE))
                 .withStyle(ChatFormatting.BLUE));
     }
