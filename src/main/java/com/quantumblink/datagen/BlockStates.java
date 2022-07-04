@@ -20,6 +20,7 @@ public class BlockStates extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         simpleBlock(BlockMod.CINNABAR_ORE.get());
+        simpleBlock(BlockMod.MERCURIZED_OBSIDIAN.get());
         registerPowergen();
     }
     private void registerPowergen() {
