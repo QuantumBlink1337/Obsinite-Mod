@@ -50,7 +50,7 @@ public class BaseMod {
     // Change your modid here. Whenever modid is needed, use BaseMod.MODID
     public static final String MODID = "examplemod";
     private static final Logger LOGGER = LogManager.getLogger(BaseMod.MODID);
-    public static final CreativeModeTab CREATIVE_MODE_TAB = new CreativeModeTab("Obsinite") {
+    public static final CreativeModeTab CREATIVE_MODE_TAB = new CreativeModeTab("obsinite") {
         @Override
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ItemMod.CINNABAR.get());
