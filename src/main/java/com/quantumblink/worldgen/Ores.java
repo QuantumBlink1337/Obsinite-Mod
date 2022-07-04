@@ -24,6 +24,7 @@ public class Ores {
 
     public static PlacedFeature OVERWORLD_OREGEN_PF;
     public static ConfiguredFeature<OreConfiguration, Feature<OreConfiguration>> OVERWORLD_OREGEN_CF;
+    // will only spawn near calcite/amethyst clusters
     public static void registerConfiguredFeatures() {
         OreConfiguration overworldConfig = new OreConfiguration(new BlockMatchTest(Blocks.CALCITE), BlockMod.CINNABAR_ORE.get().defaultBlockState(),OVERWORLD_VEINSIZE);
         OVERWORLD_OREGEN_CF = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(BaseMod.MODID, "cinnabar_ore_overworld"), new ConfiguredFeature<>(Feature.ORE, overworldConfig));
