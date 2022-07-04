@@ -31,20 +31,13 @@ public class ItemMod {
     //BASIC ITEMS
     public static final RegistryObject<Item> CINNABAR = ITEMS.register("cinnabar", () -> new Item(ITEM_PROPERTIES));
     public static final RegistryObject<Item> CINNABAR_DUST = ITEMS.register("cinnabar_dust", () -> new Item(ITEM_PROPERTIES));
-    public static final RegistryObject<Item> MERCURY = ITEMS.register("mercury", () -> new Item(ITEM_PROPERTIES));
+    public static final RegistryObject<Item> MERCURY = ITEMS.register("mercury", () -> MercuryItem.INSTANCE);
     public static final RegistryObject<Item> OBSINITE = ITEMS.register("obsinite_ingot", () -> new Item(ITEM_PROPERTIES));
 
     //FOODS
-    private static final Supplier<MobEffectInstance> DOOMGUM_MOB_EFFECT = () -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 500, 1);
-    private static final FoodProperties DOOMGUM_PROPERTIES = new FoodProperties.Builder().saturationMod(10).nutrition(10).effect(DOOMGUM_MOB_EFFECT, .5f).build();
-    public static final RegistryObject<Item> DOOMGUM = FOODS.register("doomgum", () -> new Item(ITEM_PROPERTIES.food(DOOMGUM_PROPERTIES)));
-    public static final RegistryObject<Item> EXPLODING_FOOD = FOODS.register("exploding_food", () -> ExplodingFood.INSTANCE);
     public static final RegistryObject<Item> POSSESSED_EGG = ITEMS.register("possessed_spawn_egg", () -> new ForgeSpawnEggItem(EntityMod.POSSESSED_ENTITY, 0xff0000, 0x00ff00, ITEM_PROPERTIES));
 
     // TOOLS
-    public static final RegistryObject<Item> LIGHTNING_HAMMER = TOOLS.register("lightning_hammer", () -> LightningHammerItem.INSTANCE);
-    public static final RegistryObject<Item> GEL_PICKAXE = TOOLS.register("gel_pickaxe", () -> GelPickaxeItem.INSTANCE);
-    public static final RegistryObject<Item> TELEPORT_ROD = ITEMS.register("teleport_rod", () -> TeleportRodItem.INSTANCE);
 
     //public static final ArmorItem GEL_HELMET = (ArmorItem) new ArmorItem(ArmorStatistics.GEL, EquipmentSlot.HEAD, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)).setRegistryName(BaseMod.MODID, "gel_helmet");
 }
