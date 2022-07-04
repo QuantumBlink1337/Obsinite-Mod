@@ -4,6 +4,7 @@ import com.quantumblink.BaseMod;
 import com.quantumblink.block.BlockMod;
 import com.quantumblink.blockentity.BlockEntityMod;
 import com.quantumblink.item.ItemMod;
+import com.quantumblink.item.MercuryItem;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -19,15 +20,14 @@ public class LanguageProviderGen extends LanguageProvider {
         add("itemGroup." + BaseMod.CREATIVE_MODE_TAB, "Tutorial");
         //add(MESSAGE_POWERGEN, "Power generator generating %s per tick!");
         add(SCREEN_TUTORIAL_POWERGEN, "Power Generator");
+        add(MercuryItem.MERCURY_INFO, "Right click Obsidian with this.");
 
         //BlockEntityMod Registration;
         add(BlockEntityMod.POWERGEN.get(), "Power Generator");
         add(BlockMod.CINNABAR_ORE.get(), "Cinnabar Ore");
-        add(ItemMod.CINNABAR.get(), "Cinnabar");
-//        add(Registration.MYSTERIOUS_ORE_OVERWORLD.get(), "Mysterious ore");
-//        add(Registration.MYSTERIOUS_ORE_NETHER.get(), "Mysterious ore");
-//        add(Registration.MYSTERIOUS_ORE_END.get(), "Mysterious ore");
-//        add(Registration.MYSTERIOUS_ORE_DEEPSLATE.get(), "Mysterious ore");
+        add(ItemMod.CINNABAR.get(), "Cinnabar Crystals");
+        add(ItemMod.CINNABAR_DUST.get(), "Cinnabar Dust");
+        add(ItemMod.MERCURY.get(), "Vial of Mercury");
 
     }
 }
