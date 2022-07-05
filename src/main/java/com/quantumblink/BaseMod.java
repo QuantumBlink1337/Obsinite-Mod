@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
@@ -78,6 +79,7 @@ public class BaseMod {
         EntityMod.ENTITIES.register(MODbus);
         BlockEntityMod.BLOCK_ENTITIES.register(MODbus);
         BlockEntityMod.CONTAINERS.register(MODbus);
+        ItemMod.EFFECTS.register(MODbus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -143,7 +145,7 @@ public class BaseMod {
         //@SubscribeEvent
         public static void onPotionRemoval(PotionEvent.PotionRemoveEvent event) {
            Player player = (Player) event.getEntityLiving();
-           if (event.getPotion() ==FlyingEffect.CREATIVE_FLIGHT) {
+           if (event.getPotion() == ItemMod.FLYING.get()) {
                player.getAbilities().mayfly = false;
            }
         }

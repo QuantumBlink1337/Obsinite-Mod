@@ -18,7 +18,7 @@ import static com.quantumblink.item.ItemMod.ITEM_PROPERTIES;
 
 
 public class ExplodingFood extends Item {
-    private static final Supplier<MobEffectInstance> foodEffect = () -> new MobEffectInstance(FlyingEffect.CREATIVE_FLIGHT, 500, 1);
+    private static final Supplier<MobEffectInstance> foodEffect = () -> new MobEffectInstance(ItemMod.FLYING.get(), 500, 0);
     private static final FoodProperties foodProperties = new FoodProperties.Builder().nutrition(10).saturationMod(10).alwaysEat().effect(foodEffect, 1.0f).build();
     public static final Properties properties =ITEM_PROPERTIES.food(foodProperties);
     public static final Item INSTANCE = new ExplodingFood(properties);

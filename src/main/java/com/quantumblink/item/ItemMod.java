@@ -6,6 +6,8 @@ import com.quantumblink.item.tools.ArmorStatistics;
 import com.quantumblink.item.tools.GelPickaxeItem;
 import com.quantumblink.item.tools.LightningHammerItem;
 import com.quantumblink.item.tools.ObsiniteChest;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -30,6 +32,7 @@ public class ItemMod {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BaseMod.MODID);
     public static final DeferredRegister<Item> TOOLS = DeferredRegister.create(ForgeRegistries.ITEMS, BaseMod.MODID);
     public static final DeferredRegister<Item> FOODS = DeferredRegister.create(ForgeRegistries.ITEMS, BaseMod.MODID);
+    public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, BaseMod.MODID);
 
 
     //BASIC ITEMS
@@ -37,6 +40,7 @@ public class ItemMod {
     public static final RegistryObject<Item> CINNABAR_DUST = ITEMS.register("cinnabar_dust", () -> new Item(ITEM_PROPERTIES));
     public static final RegistryObject<Item> MERCURY = ITEMS.register("mercury", () -> MercuryItem.INSTANCE);
     public static final RegistryObject<Item> OBSINITE = ITEMS.register("obsinite_ingot", () -> new Item(ITEM_PROPERTIES));
+    public static final RegistryObject<MobEffect> FLYING = EFFECTS.register("creative_flight", () -> new FlyingEffect(MobEffectCategory.BENEFICIAL, 0));
 
     //FOODS
     public static final RegistryObject<Item> FOODTEST = FOODS.register("foo_test", () -> ExplodingFood.INSTANCE);
