@@ -29,10 +29,10 @@ import java.util.function.Supplier;
 import static com.quantumblink.item.ItemMod.ITEM_PROPERTIES;
 
 public class MercuryItem extends Item {
-    private static final Supplier<MobEffectInstance> CONFUSION = () -> new MobEffectInstance(MobEffects.CONFUSION, 200, 1);
-    private static final Supplier<MobEffectInstance> BLINDNESS = () -> new MobEffectInstance(MobEffects.BLINDNESS, 200, 1);
-    private static final Supplier<MobEffectInstance> WEAKNESS = () -> new MobEffectInstance(MobEffects.WEAKNESS, 200, 2);
-    private static final Supplier<MobEffectInstance> POISON_4 = () -> new MobEffectInstance(MobEffects.POISON, 200, 4);
+    private static final Supplier<MobEffectInstance> CONFUSION = () -> new MobEffectInstance(MobEffects.CONFUSION, 200, 0);
+    private static final Supplier<MobEffectInstance> BLINDNESS = () -> new MobEffectInstance(MobEffects.BLINDNESS, 200, 0);
+    private static final Supplier<MobEffectInstance> WEAKNESS = () -> new MobEffectInstance(MobEffects.WEAKNESS, 200, 1);
+    private static final Supplier<MobEffectInstance> POISON_4 = () -> new MobEffectInstance(MobEffects.POISON, 200, 3);
 
     public static final String MERCURY_INFO = "message.mercury";
     // Extremely toxic.
@@ -55,20 +55,16 @@ public class MercuryItem extends Item {
     @Override
     public @NotNull InteractionResult useOn(UseOnContext pContext) {
         Block block = pContext.getLevel().getBlockState(pContext.getClickedPos()).getBlock();
+        Level level = pContext.getLevel();
         if (block.equals(Blocks.OBSIDIAN)) {
-            pContext.getLevel().setBlock(pContext.getClickedPos(), BlockMod.MERCURIZED_OBSIDIAN.get().defaultBlockState(), 1);
+            level.setBlock(pContext.getClickedPos(), BlockMod.MERCURIZED_OBSIDIAN.get().defaultBlockState(), 1);
             Objects.requireNonNull(pContext.getPlayer()).getMainHandItem().shrink(1);
             pContext.getPlayer().playSound(SoundEvents.GLASS_BREAK, 10, 1);
             return InteractionResult.CONSUME;
         }
         return InteractionResult.PASS;
     }
-//    public InteractionResult useOn(UseOnContext context) {
-//        context.getLevel().setBlock(context.getClickedPos(), Blocks.GOLD_BLOCK.defaultBlockState(), 1);
-//
-//        return InteractionResult.PASS;
-//    }
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(new TextComponent(MERCURY_INFO).withStyle(ChatFormatting.DARK_BLUE));
     }
 
