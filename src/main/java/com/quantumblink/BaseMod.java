@@ -79,7 +79,7 @@ public class BaseMod {
         EntityMod.ENTITIES.register(MODbus);
         BlockEntityMod.BLOCK_ENTITIES.register(MODbus);
         BlockEntityMod.CONTAINERS.register(MODbus);
-        ItemMod.EFFECTS.register(MODbus);
+        //ItemMod.EFFECTS.register(MODbus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -142,13 +142,13 @@ public class BaseMod {
         public static void init(FMLCommonSetupEvent event) {
             event.enqueueWork(Ores::registerConfiguredFeatures);
         }
-        //@SubscribeEvent
-        public static void onPotionRemoval(PotionEvent.PotionRemoveEvent event) {
-           Player player = (Player) event.getEntityLiving();
-           if (event.getPotion() == ItemMod.FLYING.get()) {
-               player.getAbilities().mayfly = false;
-           }
-        }
+//        @SubscribeEvent
+//        public static void onPotionRemoval(PotionEvent.PotionRemoveEvent event) {
+//           Player player = (Player) event.getEntityLiving();
+//           if (event.getPotion() == ItemMod.FLYING.get()) {
+//               player.getAbilities().mayfly = false;
+//           }
+//        }
     }
     @Mod.EventBusSubscriber(modid = BaseMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientSetup {
