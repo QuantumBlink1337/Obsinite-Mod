@@ -22,7 +22,8 @@ public class BlockTagsGen extends BlockTagsProvider {
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(BlockEntityMod.POWERGEN.get());
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(BlockMod.CINNABAR_ORE.get());
+                .add(BlockMod.CINNABAR_ORE.get())
+                .add(BlockMod.MERCURIZED_OBSIDIAN.get());
         tag(Tags.Blocks.ORES)
                 .add(BlockMod.CINNABAR_ORE.get());
     }

@@ -29,5 +29,8 @@ public class ItemModels extends ItemModelProvider {
         singleTexture(Objects.requireNonNull(ItemMod.MERCURY.get().getRegistryName()).getPath(),
                 mcLoc("item/generated"),
                 "layer0", modLoc("item/mercury"));
+        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE.get().getRegistryName()).getPath(),
+                mcLoc("item/generated"),
+                "layer0", modLoc("item/obsinite_ingot"));
     }
 }

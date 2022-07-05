@@ -1,6 +1,7 @@
 package com.quantumblink.datagen;
 
 import com.quantumblink.BaseMod;
+import com.quantumblink.item.ItemMod;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -14,8 +15,10 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
     @Override
     protected void addTags() {
-        tag(Tags.Items.ORES)
-                ;
+        tag(Tags.Items.DUSTS)
+                .add(ItemMod.CINNABAR_DUST.get());
+        tag(Tags.Items.GEMS)
+                .add(ItemMod.CINNABAR.get());
     }
     @Override
     public @NotNull String getName() {

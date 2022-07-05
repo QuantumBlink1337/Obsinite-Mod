@@ -15,6 +15,7 @@ public class TutLootTables extends BaseLootTableProvider {
     @Override
     protected void addTables() {
         lootTables.put(BlockEntityMod.POWERGEN.get(), createStandardTable("powergen", BlockEntityMod.POWERGEN.get(), BlockEntityMod.POWERGEN_BE.get()));
+        lootTables.put(BlockMod.MERCURIZED_OBSIDIAN.get(), createSimpleTable("mercurized_obsidian", BlockMod.MERCURIZED_OBSIDIAN.get()));
         lootTables.put(BlockMod.CINNABAR_ORE.get(), createSilkTouchTable("cinnabar", BlockMod.CINNABAR_ORE.get(), ItemMod.CINNABAR.get(), 1, 3));
     }
 }
