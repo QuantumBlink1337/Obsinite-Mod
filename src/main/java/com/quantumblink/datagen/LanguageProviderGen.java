@@ -3,9 +3,11 @@ package com.quantumblink.datagen;
 import com.quantumblink.BaseMod;
 import com.quantumblink.block.BlockMod;
 import com.quantumblink.blockentity.BlockEntityMod;
+import com.quantumblink.enchantment.EnchantmentMod;
 import com.quantumblink.item.ItemMod;
 import com.quantumblink.item.MercuryItem;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 
 import static com.quantumblink.blockentity.PowergenBlock.*;
@@ -28,6 +30,13 @@ public class LanguageProviderGen extends LanguageProvider {
         add(ItemMod.CINNABAR.get(), "Cinnabar Crystals");
         add(ItemMod.CINNABAR_DUST.get(), "Cinnabar Dust");
         add(ItemMod.MERCURY.get(), "Vial of Mercury");
+        add(ItemMod.OBSINITE.get(), "Obsinite Ingot");
+        add(EnchantmentMod.MERCURIZED.get(),"Mercurized");
+
+        add(ItemMod.OBSINITE_HELMET.get(), "Obsinite Helmet");
+        add(ItemMod.OBSINITE_CHEST.get(), "Obsinite Chestplate");
+        add(ItemMod.OBSINITE_LEGGINGS.get(), "Obsinite Leggings");
+        add(ItemMod.OBSINITE_BOOTS.get(), "Obsinite Boots");
 
     }
 }

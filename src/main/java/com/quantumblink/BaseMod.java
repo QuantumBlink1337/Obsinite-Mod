@@ -4,30 +4,22 @@ import com.quantumblink.block.*;
 import com.quantumblink.blockentity.BlockEntityMod;
 import com.quantumblink.client.PowergenScreen;
 import com.quantumblink.config.Config;
+import com.quantumblink.enchantment.EnchantmentMod;
 import com.quantumblink.entity.*;
 import com.quantumblink.item.*;
 
 //import com.idtech.world.WorldMod;
 import com.quantumblink.worldgen.Ores;
-import net.minecraft.advancements.critereon.UsedTotemTrigger;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.event.entity.living.PotionEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -71,7 +63,7 @@ public class BaseMod {
 
         IEventBus MODbus = FMLJavaModLoadingContext.get().getModEventBus();
         Config.register();
-        EventsMod.setup();
+        ModEvents.setup();
         BlockMod.BLOCKS.register(MODbus);
         ItemMod.ITEMS.register(MODbus);
         ItemMod.FOODS.register(MODbus);
@@ -79,6 +71,7 @@ public class BaseMod {
         EntityMod.ENTITIES.register(MODbus);
         BlockEntityMod.BLOCK_ENTITIES.register(MODbus);
         BlockEntityMod.CONTAINERS.register(MODbus);
+        EnchantmentMod.ENCHANTMENTS.register(MODbus);
         //ItemMod.EFFECTS.register(MODbus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -128,7 +121,7 @@ public class BaseMod {
 
 
     @Mod.EventBusSubscriber(modid = BaseMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class EventsMod {
+    public static class ModEvents {
         @SubscribeEvent
         public static void onAttributeCreate(EntityAttributeCreationEvent event) {
             event.put(EntityMod.POSSESSED_ENTITY.get(), PossessedEntity.createMonsterAttributes().build());
@@ -142,14 +135,8 @@ public class BaseMod {
         public static void init(FMLCommonSetupEvent event) {
             event.enqueueWork(Ores::registerConfiguredFeatures);
         }
-//        @SubscribeEvent
-//        public static void onPotionRemoval(PotionEvent.PotionRemoveEvent event) {
-//           Player player = (Player) event.getEntityLiving();
-//           if (event.getPotion() == ItemMod.FLYING.get()) {
-//               player.getAbilities().mayfly = false;
-//           }
-//        }
     }
+
     @Mod.EventBusSubscriber(modid = BaseMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientSetup {
         @SubscribeEvent
