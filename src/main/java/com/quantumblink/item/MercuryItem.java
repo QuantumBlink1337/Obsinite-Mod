@@ -57,12 +57,17 @@ public class MercuryItem extends Item {
         Block block = pContext.getLevel().getBlockState(pContext.getClickedPos()).getBlock();
         if (block.equals(Blocks.OBSIDIAN)) {
             pContext.getLevel().setBlock(pContext.getClickedPos(), BlockMod.MERCURIZED_OBSIDIAN.get().defaultBlockState(), 1);
-            Objects.requireNonNull(pContext.getPlayer()).setItemInHand(pContext.getHand(), ItemStack.EMPTY);
+            Objects.requireNonNull(pContext.getPlayer()).getMainHandItem().shrink(1);
             pContext.getPlayer().playSound(SoundEvents.GLASS_BREAK, 10, 1);
             return InteractionResult.CONSUME;
         }
         return InteractionResult.PASS;
     }
+//    public InteractionResult useOn(UseOnContext context) {
+//        context.getLevel().setBlock(context.getClickedPos(), Blocks.GOLD_BLOCK.defaultBlockState(), 1);
+//
+//        return InteractionResult.PASS;
+//    }
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(new TextComponent(MERCURY_INFO).withStyle(ChatFormatting.DARK_BLUE));
     }

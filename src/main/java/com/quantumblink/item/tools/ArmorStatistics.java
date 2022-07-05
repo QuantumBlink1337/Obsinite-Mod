@@ -1,19 +1,22 @@
-package com.quantumblink.item;
+package com.quantumblink.item.tools;
 
 import com.quantumblink.BaseMod;
+import com.quantumblink.item.ItemMod;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
 public enum ArmorStatistics implements ArmorMaterial {
-    OBSINITE("obsinite", 10, new int[]{3, 5, 4, 2}, 12,
-            SoundEvents.ARMOR_EQUIP_CHAIN, 1.5f, 0.0f, () -> Ingredient.of(ItemMod.OBSINITE.get()));
+    OBSINITE("obsinite", 10, new int[]{3, 6, 8, 3}, 16,
+            SoundEvents.ARMOR_EQUIP_NETHERITE, 3.2f, 0.2f, () -> Ingredient.of(ItemMod.OBSINITE.get()));
+
 
 
     private static final int[] HEALTH_FOR_SLOT = new int[]{3, 6, 9, 12};

@@ -9,10 +9,12 @@ import com.quantumblink.item.*;
 
 //import com.idtech.world.WorldMod;
 import com.quantumblink.worldgen.Ores;
+import net.minecraft.advancements.critereon.UsedTotemTrigger;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biome;
@@ -22,6 +24,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.living.PotionEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -136,6 +139,13 @@ public class BaseMod {
         @SubscribeEvent
         public static void init(FMLCommonSetupEvent event) {
             event.enqueueWork(Ores::registerConfiguredFeatures);
+        }
+        //@SubscribeEvent
+        public static void onPotionRemoval(PotionEvent.PotionRemoveEvent event) {
+           Player player = (Player) event.getEntityLiving();
+           if (event.getPotion() ==FlyingEffect.CREATIVE_FLIGHT) {
+               player.getAbilities().mayfly = false;
+           }
         }
     }
     @Mod.EventBusSubscriber(modid = BaseMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

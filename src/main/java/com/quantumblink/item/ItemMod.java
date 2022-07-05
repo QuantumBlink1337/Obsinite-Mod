@@ -2,11 +2,15 @@ package com.quantumblink.item;
 
 import com.quantumblink.BaseMod;
 import com.quantumblink.entity.EntityMod;
+import com.quantumblink.item.tools.ArmorStatistics;
 import com.quantumblink.item.tools.GelPickaxeItem;
 import com.quantumblink.item.tools.LightningHammerItem;
+import com.quantumblink.item.tools.ObsiniteChest;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -35,9 +39,15 @@ public class ItemMod {
     public static final RegistryObject<Item> OBSINITE = ITEMS.register("obsinite_ingot", () -> new Item(ITEM_PROPERTIES));
 
     //FOODS
+    public static final RegistryObject<Item> FOODTEST = FOODS.register("foo_test", () -> ExplodingFood.INSTANCE);
     public static final RegistryObject<Item> POSSESSED_EGG = ITEMS.register("possessed_spawn_egg", () -> new ForgeSpawnEggItem(EntityMod.POSSESSED_ENTITY, 0xff0000, 0x00ff00, ITEM_PROPERTIES));
 
     // TOOLS
+    public static final RegistryObject<Item> OBSINITE_HELMET = TOOLS.register("obsinite_helmet", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.HEAD, ITEM_PROPERTIES));
+    public static final RegistryObject<Item> OBSINITE_CHEST = TOOLS.register("obsinite_chest", () -> ObsiniteChest.INSTANCE);
+    public static final RegistryObject<Item> OBSINITE_LEGGINGS = TOOLS.register("obsinite_leggings", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.LEGS, ITEM_PROPERTIES));
+    public static final RegistryObject<Item> OBSINITE_BOOTS = TOOLS.register("obsinite_boots", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.FEET, ITEM_PROPERTIES));
+
 
     //public static final ArmorItem GEL_HELMET = (ArmorItem) new ArmorItem(ArmorStatistics.GEL, EquipmentSlot.HEAD, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)).setRegistryName(BaseMod.MODID, "gel_helmet");
 }
