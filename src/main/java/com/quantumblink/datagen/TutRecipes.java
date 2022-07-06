@@ -41,10 +41,16 @@ public class TutRecipes extends RecipeProvider {
             dyes.add(Items.YELLOW_DYE);
             dyes.add(Items.LIGHT_BLUE_DYE);
 
-
-
-        List<ArmorItem> DIAMOND_ARMOR = new ArrayList<>();
-            DIAMOND_ARMOR.add((ArmorItem) Items.DIAMOND_CHESTPLATE);
+        List<ArmorItem> NETHERITE_ARMOR = new ArrayList<>();
+            NETHERITE_ARMOR.add((ArmorItem) Items.NETHERITE_HELMET);
+            NETHERITE_ARMOR.add((ArmorItem) Items.NETHERITE_CHESTPLATE);
+            NETHERITE_ARMOR.add((ArmorItem) Items.NETHERITE_LEGGINGS);
+            NETHERITE_ARMOR.add((ArmorItem) Items.NETHERITE_BOOTS);
+        List<ArmorItem> OBSINITE_ARMOR = new ArrayList<>();
+            OBSINITE_ARMOR.add((ArmorItem) ItemMod.OBSINITE_HELMET.get());
+            OBSINITE_ARMOR.add((ArmorItem) ItemMod.OBSINITE_CHEST.get());
+            OBSINITE_ARMOR.add((ArmorItem) ItemMod.OBSINITE_LEGGINGS.get());
+            OBSINITE_ARMOR.add((ArmorItem) ItemMod.OBSINITE_BOOTS.get());
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(ItemMod.CINNABAR_DUST.get()), ItemMod.MERCURY.get(), 2f, 400)
                 .unlockedBy("has_cinnabar_dust",has(ItemMod.CINNABAR_DUST.get()))
                 .save(consumer, recipeName("cinnabar_dust_to_mercury"));
@@ -62,8 +68,10 @@ public class TutRecipes extends RecipeProvider {
                     .unlockedBy("has_crystalline_mix", has(ItemMod.CRYSTALLINE_MIX.get()))
                     .save(consumer, recipeName("crystalline_" + dye));
         }
-        for (ArmorItem armor : DIAMOND_ARMOR) {
-            int remainingDurability = armor.getMaterial().getDurabilityForSlot(armor.getSlot()) - Ingredient.of(armor).getItems()[0].getDamageValue();
+        for (int i = 0; i < NETHERITE_ARMOR.size(); i++) {
+            UpgradeRecipeBuilder.smithing(Ingredient.of(NETHERITE_ARMOR.get(i)), Ingredient.of(ItemMod.OBSINITE.get()), OBSINITE_ARMOR.get(i))
+                    .unlocks("has_obsinite_ingot", has(ItemMod.OBSINITE.get()))
+                    .save(consumer, recipeName(OBSINITE_ARMOR.get(i).toString()));
 
         }
         ShapelessRecipeBuilder.shapeless(ItemMod.CRYSTALLINE_MIX.get())
