@@ -32,5 +32,20 @@ public class ItemModels extends ItemModelProvider {
         singleTexture(Objects.requireNonNull(ItemMod.OBSINITE.get().getRegistryName()).getPath(),
                 mcLoc("item/generated"),
                 "layer0", modLoc("item/obsinite_ingot"));
+        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_SWORD.get().getRegistryName()).getPath(),
+                mcLoc("item/generated"),
+                "layer0", modLoc("item/obsinite_sword"));
+        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_PICKAXE.get().getRegistryName()).getPath(),
+                mcLoc("item/generated"),
+                "layer0", modLoc("item/obsinite_pickaxe"));
+        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_SHOVEL.get().getRegistryName()).getPath(),
+                mcLoc("item/generated"),
+                "layer0", modLoc("item/obsinite_shovel"));
+        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_AXE.get().getRegistryName()).getPath(),
+                mcLoc("item/generated"),
+                "layer0", modLoc("item/obsinite_axe"));
+        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_HOE.get().getRegistryName()).getPath(),
+                mcLoc("item/generated"),
+                "layer0", modLoc("item/obsinite_hoe"));
     }
 }
