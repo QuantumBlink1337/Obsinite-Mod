@@ -29,7 +29,7 @@ public class ItemMod {
     public static final RegistryObject<Item> CINNABAR = ITEMS.register("cinnabar", () -> new Item(ITEM_PROPERTIES));
     public static final RegistryObject<Item> CINNABAR_DUST = ITEMS.register("cinnabar_dust", () -> new Item(ITEM_PROPERTIES));
     public static final RegistryObject<Item> MERCURY = ITEMS.register("mercury", () -> MercuryItem.INSTANCE);
-    public static final RegistryObject<Item> OBSINITE = ITEMS.register("obsinite_ingot", () -> new Item(ITEM_PROPERTIES));
+    public static final RegistryObject<Item> OBSINITE = ITEMS.register("obsinite_ingot", () -> new Item(ITEM_PROPERTIES.fireResistant()));
     public static final RegistryObject<Item> CRYSTALLINE_MIX = ITEMS.register("crystalline_mix", () -> new Item(ITEM_PROPERTIES));
 
 
@@ -40,10 +40,10 @@ public class ItemMod {
     public static final RegistryObject<Item> POSSESSED_EGG = ITEMS.register("possessed_spawn_egg", () -> new ForgeSpawnEggItem(EntityMod.POSSESSED_ENTITY, 0xff0000, 0x00ff00, ITEM_PROPERTIES));
 
     // TOOLS
-    public static final RegistryObject<Item> OBSINITE_HELMET = TOOLS.register("obsinite_helmet", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.HEAD, ITEM_PROPERTIES));
+    public static final RegistryObject<Item> OBSINITE_HELMET = TOOLS.register("obsinite_helmet", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.HEAD, ITEM_PROPERTIES.fireResistant()));
     public static final RegistryObject<Item> OBSINITE_CHEST = TOOLS.register("obsinite_chest", () -> ObsiniteChest.INSTANCE);
-    public static final RegistryObject<Item> OBSINITE_LEGGINGS = TOOLS.register("obsinite_leggings", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.LEGS, ITEM_PROPERTIES));
-    public static final RegistryObject<Item> OBSINITE_BOOTS = TOOLS.register("obsinite_boots", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.FEET, ITEM_PROPERTIES));
+    public static final RegistryObject<Item> OBSINITE_LEGGINGS = TOOLS.register("obsinite_leggings", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.LEGS, ITEM_PROPERTIES.fireResistant()));
+    public static final RegistryObject<Item> OBSINITE_BOOTS = TOOLS.register("obsinite_boots", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.FEET, ITEM_PROPERTIES.fireResistant()));
 
     public static final RegistryObject<Item> OBSINITE_SWORD = TOOLS.register("obsinite_sword", () -> new SwordItem(TIER, 1, 1.0f, ITEM_PROPERTIES.fireResistant()));
     public static final RegistryObject<Item> OBSINITE_PICKAXE = TOOLS.register("obsinite_pickaxe", () -> new PickaxeItem(TIER, 1, 1.0f, ITEM_PROPERTIES.fireResistant()));
