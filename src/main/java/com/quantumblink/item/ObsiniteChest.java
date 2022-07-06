@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class ObsiniteChest extends ArmorItem {
-    public static final ObsiniteChest INSTANCE = new ObsiniteChest(ArmorStatistics.OBSINITE, EquipmentSlot.CHEST, ItemMod.ITEM_PROPERTIES);
+    public static final ObsiniteChest INSTANCE = new ObsiniteChest(ArmorStatistics.OBSINITE, EquipmentSlot.CHEST, ItemMod.ITEM_PROPERTIES.fireResistant());
     public ObsiniteChest(ArmorMaterial pMaterial, EquipmentSlot pSlot, Properties pProperties) {
         super(pMaterial, pSlot, pProperties);
     }
