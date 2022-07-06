@@ -7,6 +7,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import org.jetbrains.annotations.NotNull;
 
 public class MercurizedEnchantment extends Enchantment {
     public static Enchantment INSTANCE = new MercurizedEnchantment(Rarity.VERY_RARE, EquipmentSlot.MAINHAND);
@@ -31,7 +32,7 @@ public class MercurizedEnchantment extends Enchantment {
         return 3;
     }
 
-    public void doPostAttack(LivingEntity user, Entity target, int level) {
+    public void doPostAttack(@NotNull LivingEntity user, @NotNull Entity target, int level) {
         if (target instanceof LivingEntity livingentity) {
 
             int ticks = level * 50;
