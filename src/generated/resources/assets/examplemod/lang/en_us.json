@@ -1,10 +1,16 @@
 {
   "block.examplemod.cinnabar_ore": "Cinnabar Ore",
   "block.examplemod.powergen": "Power Generator",
+  "enchantment.examplemod.mercurized": "Mercurized",
   "item.examplemod.cinnabar": "Cinnabar Crystals",
   "item.examplemod.cinnabar_dust": "Cinnabar Dust",
   "item.examplemod.mercury": "Vial of Mercury",
-  "itemGroup.com.quantumblink.BaseMod$1@229cf4e7": "Tutorial",
+  "item.examplemod.obsinite_boots": "Obsinite Boots",
+  "item.examplemod.obsinite_chest": "Obsinite Chestplate",
+  "item.examplemod.obsinite_helmet": "Obsinite Helmet",
+  "item.examplemod.obsinite_ingot": "Obsinite Ingot",
+  "item.examplemod.obsinite_leggings": "Obsinite Leggings",
+  "itemGroup.com.quantumblink.BaseMod$1@3cf828db": "Tutorial",
   "message.mercury": "Right click Obsidian with this.",
   "screen.tutorial.powergen": "Power Generator"
 }

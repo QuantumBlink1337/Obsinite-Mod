@@ -1,4 +1,4 @@
-package com.quantumblink.item.tools;
+package com.quantumblink.item;
 
 import com.quantumblink.BaseMod;
 import com.quantumblink.item.ItemMod;
