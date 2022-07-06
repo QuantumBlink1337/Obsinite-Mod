@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_leggings"
+  },
+  "addition": {
+    "item": "examplemod:obsinite_ingot"
+  },
+  "result": {
+    "item": "examplemod:obsinite_leggings"
+  }
+}

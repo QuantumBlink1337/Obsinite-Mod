@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "examplemod:cinnabar_dust"
+  },
+  "result": "examplemod:mercury",
+  "experience": 2.0,
+  "cookingtime": 400
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "examplemod:cinnabar_to_cinnabar_dust"
+    ]
+  },
+  "criteria": {
+    "has_cinnabar": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "examplemod:cinnabar"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "examplemod:cinnabar_to_cinnabar_dust"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cinnabar",
+      "has_the_recipe"
+    ]
+  ]
+}

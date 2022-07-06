@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "examplemod:obsinite_ingot_recipe"
+    ]
+  },
+  "criteria": {
+    "mercurized_obsidian_unlock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "examplemod:mercurized_obsidian"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "examplemod:obsinite_ingot_recipe"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mercurized_obsidian_unlock",
+      "has_the_recipe"
+    ]
+  ]
+}
