@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "examplemod:crystalline_mix"
-  },
-  "result": "minecraft:blue_dye",
-  "count": 1
-}
