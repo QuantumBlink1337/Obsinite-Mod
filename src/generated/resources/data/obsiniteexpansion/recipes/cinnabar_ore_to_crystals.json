@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "obsiniteexpansion:cinnabar_ore"
+  },
+  "result": "obsiniteexpansion:cinnabar",
+  "experience": 2.0,
+  "cookingtime": 200
+}

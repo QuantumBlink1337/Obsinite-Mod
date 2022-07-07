@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "obsiniteexpansion:crystalline_mix"
+  },
+  "result": "minecraft:purple_dye",
+  "count": 1
+}

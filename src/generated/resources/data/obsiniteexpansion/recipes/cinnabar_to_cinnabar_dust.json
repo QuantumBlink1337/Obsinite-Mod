@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "obsiniteexpansion:cinnabar"
+  },
+  "result": "obsiniteexpansion:cinnabar_dust",
+  "count": 1
+}

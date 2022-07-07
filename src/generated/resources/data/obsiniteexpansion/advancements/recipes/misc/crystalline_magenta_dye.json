@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "obsiniteexpansion:crystalline_magenta_dye"
+    ]
+  },
+  "criteria": {
+    "has_crystalline_mix": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "obsiniteexpansion:crystalline_mix"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "obsiniteexpansion:crystalline_magenta_dye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_crystalline_mix",
+      "has_the_recipe"
+    ]
+  ]
+}

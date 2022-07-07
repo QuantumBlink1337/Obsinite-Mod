@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "obsiniteexpansion:obsinite_block"
+    }
+  ],
+  "result": {
+    "item": "obsiniteexpansion:obsinite_ingot",
+    "count": 9
+  }
+}

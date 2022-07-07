@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "obsiniteexpansion:cinnabar_dust"
+  },
+  "result": "obsiniteexpansion:mercury",
+  "experience": 2.0,
+  "cookingtime": 400
+}

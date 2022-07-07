@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_hoe"
+  },
+  "addition": {
+    "item": "obsiniteexpansion:obsinite_ingot"
+  },
+  "result": {
+    "item": "obsiniteexpansion:obsinite_hoe"
+  }
+}
