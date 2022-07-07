@@ -1,5 +1,6 @@
 package com.quantumblink.item;
 
+import com.quantumblink.BaseMod;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -9,6 +10,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 public class ObsiniteChest extends ArmorItem {
     public static final ObsiniteChest INSTANCE = new ObsiniteChest(ArmorStatistics.OBSINITE, EquipmentSlot.CHEST, ItemMod.ITEM_PROPERTIES.fireResistant());
@@ -26,13 +28,14 @@ public class ObsiniteChest extends ArmorItem {
             }
         }
     }
+    @Nullable
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
         if (slot == EquipmentSlot.LEGS) {
-            return "examplemod:textures/models/armor/obsinite_armor_layer_2.png";
+            return BaseMod.MODID  + ":textures/models/armor/obsinite_armor_layer_2.png";
         }
         else {
-            return "examplemod:textures/models/armor/obsinite_armor_layer_1.png";
+            return BaseMod.MODID + ":textures/models/armor/obsinite_armor_layer_1.png";
         }
     }
 
