@@ -21,6 +21,7 @@ public class BlockStates extends BlockStateProvider {
     protected void registerStatesAndModels() {
         simpleBlock(BlockMod.CINNABAR_ORE.get());
         simpleBlock(BlockMod.MERCURIZED_OBSIDIAN.get());
+        simpleBlock(BlockMod.OBSINITE_BLOCK.get());
         registerPowergen();
     }
     private void registerPowergen() {
