@@ -22,8 +22,6 @@ public class ItemMod {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BaseMod.MODID);
     public static final DeferredRegister<Item> TOOLS = DeferredRegister.create(ForgeRegistries.ITEMS, BaseMod.MODID);
     public static final DeferredRegister<Item> FOODS = DeferredRegister.create(ForgeRegistries.ITEMS, BaseMod.MODID);
-    //public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, BaseMod.MODID);
-
 
     //BASIC ITEMS
     public static final RegistryObject<Item> CINNABAR = ITEMS.register("cinnabar", () -> new Item(ITEM_PROPERTIES));
@@ -40,12 +38,12 @@ public class ItemMod {
     public static final RegistryObject<Item> POSSESSED_EGG = ITEMS.register("possessed_spawn_egg", () -> new ForgeSpawnEggItem(EntityMod.POSSESSED_ENTITY, 0xff0000, 0x00ff00, ITEM_PROPERTIES));
 
     // TOOLS
-    public static final RegistryObject<Item> OBSINITE_HELMET = TOOLS.register("obsinite_helmet", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.HEAD, ITEM_PROPERTIES.fireResistant()));
+    public static final RegistryObject<Item> OBSINITE_HELMET = TOOLS.register("obsinite_helmet", () -> ObsiniteHelmet.INSTANCE);
     public static final RegistryObject<Item> OBSINITE_CHEST = TOOLS.register("obsinite_chest", () -> ObsiniteChest.INSTANCE);
-    public static final RegistryObject<Item> OBSINITE_LEGGINGS = TOOLS.register("obsinite_leggings", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.LEGS, ITEM_PROPERTIES.fireResistant()));
-    public static final RegistryObject<Item> OBSINITE_BOOTS = TOOLS.register("obsinite_boots", () -> new ArmorItem(ArmorStatistics.OBSINITE, EquipmentSlot.FEET, ITEM_PROPERTIES.fireResistant()));
+    public static final RegistryObject<Item> OBSINITE_LEGGINGS = TOOLS.register("obsinite_leggings", () -> ObsiniteLeggings.INSTANCE);
+    public static final RegistryObject<Item> OBSINITE_BOOTS = TOOLS.register("obsinite_boots", () -> ObsiniteBoots.INSTANCE);
 
-    public static final RegistryObject<Item> OBSINITE_SWORD = TOOLS.register("obsinite_sword", () -> new SwordItem(TIER, 4, -1.5f, ITEM_PROPERTIES.fireResistant()));
+    public static final RegistryObject<Item> OBSINITE_SWORD = TOOLS.register("obsinite_sword", () -> new ObsiniteSword(TIER, 4, -1.5f, ITEM_PROPERTIES.fireResistant()));
     public static final RegistryObject<Item> OBSINITE_PICKAXE = TOOLS.register("obsinite_pickaxe", () -> new PickaxeItem(TIER, (int) 1.5F, -3.0f, ITEM_PROPERTIES.fireResistant()));
     public static final RegistryObject<Item> OBSINITE_SHOVEL = TOOLS.register("obsinite_shovel", () -> new ShovelItem(TIER, 1, -2.8f, ITEM_PROPERTIES.fireResistant()));
     public static final RegistryObject<Item> OBSINITE_AXE = TOOLS.register("obsinite_axe", () -> new AxeItem(TIER, 5, -3.0f, ITEM_PROPERTIES.fireResistant()));
