@@ -26,6 +26,15 @@ public class ObsiniteChest extends ArmorItem {
             }
         }
     }
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+        if (slot == EquipmentSlot.LEGS) {
+            return "examplemod:textures/models/armor/obsinite_armor_layer_2.png";
+        }
+        else {
+            return "examplemod:textures/models/armor/obsinite_armor_layer_1.png";
+        }
+    }
 
 
 }
