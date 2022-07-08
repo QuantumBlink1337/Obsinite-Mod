@@ -9,6 +9,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -92,13 +93,6 @@ public class TutRecipes extends RecipeProvider {
                     .save(consumer, recipeName(OBSINITE_TOOLS.get(i).toString()));
 
         }
-        ShapelessRecipeBuilder.shapeless(ItemMod.CRYSTALLINE_MIX.get())
-                .requires(ItemMod.CINNABAR.get())
-                .requires(Items.AMETHYST_SHARD)
-                .requires(Items.QUARTZ)
-                .requires(Items.LAPIS_LAZULI)
-                .unlockedBy("has_cinnabar", has(ItemMod.CINNABAR.get()))
-                .save(consumer, recipeName("crystalline_mix_recipe"));
         ShapedRecipeBuilder.shaped(BlockMod.OBSINITE_BLOCK_ITEM.get())
                 .pattern("aaa")
                 .pattern("aaa")
@@ -110,6 +104,15 @@ public class TutRecipes extends RecipeProvider {
                 .requires(BlockMod.OBSINITE_BLOCK_ITEM.get())
                 .unlockedBy("has_obsinite_ingot",has(ItemMod.OBSINITE.get()))
                 .save(consumer, recipeName("obsinite_block_to_ingot"));
+        ShapelessRecipeBuilder.shapeless(ItemMod.CRYSTALLINE_MIX.get(), 3)
+                .requires(ItemMod.CINNABAR.get())
+                .requires(Items.QUARTZ)
+                .requires(Items.AMETHYST_SHARD)
+                .requires(Items.LAPIS_LAZULI)
+                .requires(Blocks.CALCITE)
+                .unlockedBy("has_cinnabar", has(ItemMod.CINNABAR.get()))
+                .save(consumer, recipeName("crystalline_mix_recipe"));
+
 
     }
     private String recipeName(String string) {

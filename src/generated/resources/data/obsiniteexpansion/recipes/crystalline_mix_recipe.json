@@ -5,16 +5,20 @@
       "item": "obsiniteexpansion:cinnabar"
     },
     {
-      "item": "minecraft:amethyst_shard"
-    },
-    {
       "item": "minecraft:quartz"
     },
     {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
       "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "item": "minecraft:calcite"
     }
   ],
   "result": {
-    "item": "obsiniteexpansion:crystalline_mix"
+    "item": "obsiniteexpansion:crystalline_mix",
+    "count": 3
   }
 }
