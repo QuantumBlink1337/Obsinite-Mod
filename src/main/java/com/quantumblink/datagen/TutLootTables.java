@@ -4,7 +4,6 @@ import com.quantumblink.block.BlockMod;
 import com.quantumblink.blockentity.BlockEntityMod;
 import com.quantumblink.item.ItemMod;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.item.Item;
 
 public class TutLootTables extends BaseLootTableProvider {
 
@@ -17,5 +16,6 @@ public class TutLootTables extends BaseLootTableProvider {
         lootTables.put(BlockEntityMod.POWERGEN.get(), createStandardTable("powergen", BlockEntityMod.POWERGEN.get(), BlockEntityMod.POWERGEN_BE.get()));
         lootTables.put(BlockMod.MERCURIZED_OBSIDIAN.get(), createSimpleTable("mercurized_obsidian", BlockMod.MERCURIZED_OBSIDIAN.get()));
         lootTables.put(BlockMod.CINNABAR_ORE.get(), createSilkTouchTable("cinnabar", BlockMod.CINNABAR_ORE.get(), ItemMod.CINNABAR.get(), 1, 3));
+        lootTables.put(BlockMod.OBSINITE_BLOCK.get(), createSimpleTable("obsinite_block", BlockMod.OBSINITE_BLOCK.get()));
     }
 }
