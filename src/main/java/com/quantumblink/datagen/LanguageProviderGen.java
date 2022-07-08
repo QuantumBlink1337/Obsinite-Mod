@@ -27,16 +27,28 @@ public class LanguageProviderGen extends LanguageProvider {
         //BlockEntityMod Registration;
         add(BlockEntityMod.POWERGEN.get(), "Power Generator");
         add(BlockMod.CINNABAR_ORE.get(), "Cinnabar Ore");
+        add(BlockMod.MERCURIZED_OBSIDIAN.get(), "Mercurized Obsidian");
+
         add(ItemMod.CINNABAR.get(), "Cinnabar Crystals");
         add(ItemMod.CINNABAR_DUST.get(), "Cinnabar Dust");
         add(ItemMod.MERCURY.get(), "Vial of Mercury");
         add(ItemMod.OBSINITE.get(), "Obsinite Ingot");
-        add(EnchantmentMod.MERCURIZED.get(),"Mercurized");
+        add(ItemMod.CRYSTALLINE_MIX.get(), "Crystalline Mix");
 
         add(ItemMod.OBSINITE_HELMET.get(), "Obsinite Helmet");
         add(ItemMod.OBSINITE_CHEST.get(), "Obsinite Chestplate");
         add(ItemMod.OBSINITE_LEGGINGS.get(), "Obsinite Leggings");
         add(ItemMod.OBSINITE_BOOTS.get(), "Obsinite Boots");
+
+        add(ItemMod.OBSINITE_SWORD.get(), "Obsinite Sword");
+        add(ItemMod.OBSINITE_PICKAXE.get(), "Obsinite Pickaxe");
+        add(ItemMod.OBSINITE_SHOVEL.get(), "Obsinite Shovel");
+        add(ItemMod.OBSINITE_AXE.get(), "Obsinite Axe");
+        add(ItemMod.OBSINITE_HOE.get(), "Obsinite Hoe");
+
+        add(EnchantmentMod.MERCURIZED.get(),"Mercurized");
+
+
 
     }
 }
