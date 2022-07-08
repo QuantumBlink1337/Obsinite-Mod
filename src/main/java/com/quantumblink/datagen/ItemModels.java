@@ -21,6 +21,19 @@ public class ItemModels extends ItemModelProvider {
         withExistingParent(Objects.requireNonNull(BlockMod.CINNABAR_ORE_ITEM.get().getRegistryName()).getPath(), modLoc("block/cinnabar_ore"));
         withExistingParent(Objects.requireNonNull(BlockMod.MERCURIZED_OBSIDIAN_ITEM.get().getRegistryName()).getPath(), modLoc("block/mercurized_obsidian"));
         withExistingParent(Objects.requireNonNull(BlockMod.OBSINITE_BLOCK_ITEM.get().getRegistryName()).getPath(), modLoc("block/obsinite_block"));
+
+
+        withExistingParent(Objects.requireNonNull(ItemMod.OBSINITE_SWORD.get().getRegistryName()).getPath()
+                , "item/handheld").texture("layer0", "item/obsinite_sword");
+        withExistingParent(Objects.requireNonNull(ItemMod.OBSINITE_PICKAXE.get().getRegistryName()).getPath()
+                , "item/handheld").texture("layer0", "item/obsinite_pickaxe");
+        withExistingParent(Objects.requireNonNull(ItemMod.OBSINITE_SHOVEL.get().getRegistryName()).getPath()
+                , "item/handheld").texture("layer0", "item/obsinite_shovel");
+        withExistingParent(Objects.requireNonNull(ItemMod.OBSINITE_AXE.get().getRegistryName()).getPath()
+                , "item/handheld").texture("layer0", "item/obsinite_axe");
+        withExistingParent(Objects.requireNonNull(ItemMod.OBSINITE_HOE.get().getRegistryName()).getPath()
+                , "item/handheld").texture("layer0", "item/obsinite_hoe");
+
         singleTexture(Objects.requireNonNull(ItemMod.CINNABAR.get().getRegistryName()).getPath(),
                 mcLoc("item/generated"),
                 "layer0", modLoc("item/cinnabar"));
@@ -33,21 +46,6 @@ public class ItemModels extends ItemModelProvider {
         singleTexture(Objects.requireNonNull(ItemMod.OBSINITE.get().getRegistryName()).getPath(),
                 mcLoc("item/generated"),
                 "layer0", modLoc("item/obsinite_ingot"));
-        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_SWORD.get().getRegistryName()).getPath(),
-                mcLoc("item/generated"),
-                "layer0", modLoc("item/obsinite_sword"));
-        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_PICKAXE.get().getRegistryName()).getPath(),
-                mcLoc("item/generated"),
-                "layer0", modLoc("item/obsinite_pickaxe"));
-        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_SHOVEL.get().getRegistryName()).getPath(),
-                mcLoc("item/generated"),
-                "layer0", modLoc("item/obsinite_shovel"));
-        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_AXE.get().getRegistryName()).getPath(),
-                mcLoc("item/generated"),
-                "layer0", modLoc("item/obsinite_axe"));
-        singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_HOE.get().getRegistryName()).getPath(),
-                mcLoc("item/generated"),
-                "layer0", modLoc("item/obsinite_hoe"));
         singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_HELMET.get().getRegistryName()).getPath(),
                 mcLoc("item/generated"),
                 "layer0", modLoc("item/obsinite_helmet"));
@@ -60,5 +58,8 @@ public class ItemModels extends ItemModelProvider {
         singleTexture(Objects.requireNonNull(ItemMod.OBSINITE_BOOTS.get().getRegistryName()).getPath(),
                 mcLoc("item/generated"),
                 "layer0", modLoc("item/obsinite_boots"));
+        singleTexture(Objects.requireNonNull(ItemMod.CRYSTALLINE_MIX.get().getRegistryName()).getPath(),
+                mcLoc("item/generated"),
+                "layer0", modLoc("item/crystalline_mix"));
     }
 }
